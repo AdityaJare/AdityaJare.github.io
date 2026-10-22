@@ -6,7 +6,7 @@
     "summary": "Enterprise-grade legal intelligence ecosystem featuring Google Gemini AI & Pinecone vector search for statutory advice, automated contract risk assessment, dynamic legal template generation, and verified lawyer consultation.",
     "featured": true,
     "status": "Deployed on Railway",
-    "image": "assets/Juri-ai/Screenshot 2026-05-15 174506.png",
+    "image": "assets/Juri-ai/juri-01-landing-page.png",
     "problem": "Navigating statutory law and reviewing legal documents is costly, complex, and inaccessible to everyday citizens and small businesses.",
     "dataset": "Comprehensive Indian Statutory & Case Law Corpus (Constitution of India, Special Marriage Act, Hindu Marriage Act, FEMA 1999, Consumer Protection Act 2019, Rent Control Act) vectorized with HuggingFace embeddings in Pinecone.",
     "methodology": "Triple-tier microservices: React/TypeScript frontend, Express.js API gateway with JWT RBAC, and FastAPI Python AI engine. RAG pipeline combines Pinecone top-k vector search with Google Gemini LLM for context-aware statutory answers and automated contract clause risk analysis.",
@@ -21,56 +21,52 @@
     "additionalLinks": "https://github.com/RajendraMargale22/JURI-AI/blob/main/SYSTEM_DIAGRAMS.md",
     "gallery": [
       {
-        "caption": "Jury AI Landing Page & Intelligent Dashboard",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174506.png"
+        "caption": "JURI-AI Landing Page & Assistant Overview",
+        "image": "assets/Juri-ai/juri-01-landing-page.png"
       },
       {
-        "caption": "Multi-Role Authentication & Access Control (User, Lawyer, Admin)",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174150.png"
+        "caption": "Comprehensive Legal Assistance - Services Suite",
+        "image": "assets/Juri-ai/juri-02-services-overview.png"
       },
       {
-        "caption": "Interactive AI Legal Assistant Chat with Statutory Act Citations",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174615.png"
-      },
-      {
-        "caption": "Statutory Query Retrieval (Special Marriage Act, Hindu Marriage Act)",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174647.png"
+        "caption": "AI Legal Chat Assistant with Statutory Act Citations",
+        "image": "assets/Juri-ai/juri-03-ai-chat.png"
       },
       {
         "caption": "Contract Review & AI Risk Analysis (Clause Scoring & FEMA Compliance)",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174913.png"
+        "image": "assets/Juri-ai/juri-04-contract-risk.png"
       },
       {
-        "caption": "Legal Document Templates & Automated Dynamic Generation",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 175009.png"
+        "caption": "Dynamic Legal Document Templates & Automated Generation",
+        "image": "assets/Juri-ai/juri-05-legal-templates.png"
       },
       {
-        "caption": "Verified Lawyer Network & Consultation Requests",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174949.png"
+        "caption": "Verified Lawyer Consultation Network & Directory",
+        "image": "assets/Juri-ai/juri-06-lawyer-network.png"
       },
       {
-        "caption": "Admin Control Panel & User/Lawyer Management",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174407.png"
+        "caption": "Admin Lawyer Verification & Management Portal",
+        "image": "assets/Juri-ai/juri-07-admin-lawyers.png"
       },
       {
-        "caption": "Lawyer Verification & Credentials Management",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174431.png"
+        "caption": "Admin Analytics Dashboard & Statistics",
+        "image": "assets/Juri-ai/juri-08-admin-dashboard.png"
       },
       {
-        "caption": "User Profile & Security Settings",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174447.png"
+        "caption": "System Configurations & Production Platform Settings",
+        "image": "assets/Juri-ai/juri-09-platform-settings.png"
+      },
+      {
+        "caption": "Multi-Role RBAC Authentication (User, Lawyer, Admin)",
+        "image": "assets/Juri-ai/juri-10-authentication.png"
       },
       {
         "caption": "Indian Legal Knowledge & Fundamental Rights Cards",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174517.png"
+        "image": "assets/Juri-ai/juri-11-legal-knowledge.png"
       },
       {
-        "caption": "Legal System Precedents & High Courts Information",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174527.png"
-      },
-      {
-        "caption": "24/7 AI-Powered Legal Platform Engine",
-        "image": "assets/Juri-ai/Screenshot 2026-05-15 174455.png"
+        "caption": "Legal Precedents & High Courts Information",
+        "image": "assets/Juri-ai/juri-12-court-precedents.png"
       }
     ]
   },

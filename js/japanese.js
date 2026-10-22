@@ -1,14 +1,15 @@
 /**
- * Aditya Jare Portfolio - Japanese Engine (japanese.js)
- * Powers JLPT N3 tracker, skills grid, interactive Word of the Day with Web Speech API,
- * 3D flashcards flip logic, and resource lists from japanese.json.
+ * Aditya Jare Portfolio - Japanese Page Engine (japanese.js)
+ * Powers Bunkasai 2026 Auto-Slider, Cultural Photo Gallery, and Full-Screen Lightbox.
  */
 
 (function () {
   'use strict';
 
   let japaneseData = null;
-  let currentWordIndex = 0;
+  let currentSlideIndex = 0;
+  let autoSlideTimer = null;
+  let isHovered = false;
 
   async function loadJapaneseData() {
     try {
@@ -16,10 +17,8 @@
       if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
       japaneseData = await response.json();
 
-      renderSkillsGrid();
-      initWordOfTheDay();
-      renderVocabFlipCards();
-      renderStudyResources();
+      renderBunkasaiSlider();
+      initBunkasaiSliderControls();
       renderBunkasaiGallery();
       initLightbox();
     } catch (error) {
@@ -27,161 +26,205 @@
     }
   }
 
-  // --- 1. Skills Grid ---
-  function renderSkillsGrid() {
-    const container = document.getElementById('jp-skills-grid');
-    if (!container || !japaneseData || !japaneseData.skills) return;
+  // --- 1. Render Bunkasai Auto-Slider ---
+  function renderBunkasaiSlider() {
+    const track = document.getElementById('bunkasai-slides-track');
+    const dotsContainer = document.getElementById('bunkasai-dots');
+    if (!track || !japaneseData || !japaneseData.gallery) return;
 
-    container.innerHTML = japaneseData.skills.map((skill) => `
-      <div class="jp-skill-card">
-        <div class="jp-skill-top">
-          <span class="jp-skill-name">${escapeHtml(skill.name)}</span>
-          <span class="badge badge-tag" style="color: var(--accent-cyan); font-weight: 600;">
-            ${escapeHtml(skill.level)}
-          </span>
+    const items = japaneseData.gallery;
+    if (items.length === 0) return;
+
+    track.innerHTML = items.map((item, index) => `
+      <div class="bunkasai-slide" data-slide-index="${index}">
+        <div class="bunkasai-slide-img-box" role="button" tabindex="0" aria-label="Enlarge photo: ${escapeHtml(item.title)}">
+          <span class="bunkasai-slide-badge">${escapeHtml(item.category)}</span>
+          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt || item.title)}" loading="${index === 0 ? 'eager' : 'lazy'}" />
         </div>
-        <div class="progress-track" role="progressbar" aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-fill" style="width: ${skill.percentage}%;"></div>
+        <div class="bunkasai-slide-info">
+          <h4 class="bunkasai-slide-title">
+            <span>${escapeHtml(item.title)}</span>
+          </h4>
+          <p class="bunkasai-slide-desc">${escapeHtml(item.description || item.alt)}</p>
         </div>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;">
-          ${escapeHtml(skill.note)}
-        </p>
       </div>
     `).join('');
+
+    if (dotsContainer) {
+      dotsContainer.innerHTML = items.map((item, index) => `
+        <button type="button" class="bunkasai-dot ${index === 0 ? 'active' : ''}" data-target-slide="${index}" aria-label="Go to slide ${index + 1}: ${escapeHtml(item.title)}"></button>
+      `).join('');
+    }
+
+    updateSliderUI();
   }
 
-  // --- 2. Interactive Word of the Day ---
-  function initWordOfTheDay() {
-    const wotdContainer = document.getElementById('wotd-card-content');
-    if (!wotdContainer || !japaneseData || !japaneseData.vocabulary) return;
+  // --- 2. Bunkasai Slider Logic & Controls ---
+  function initBunkasaiSliderControls() {
+    const wrapper = document.getElementById('bunkasai-slider');
+    const prevBtn = document.getElementById('bunkasai-prev-btn');
+    const nextBtn = document.getElementById('bunkasai-next-btn');
+    const dotsContainer = document.getElementById('bunkasai-dots');
+    const track = document.getElementById('bunkasai-slides-track');
+    if (!wrapper || !japaneseData || !japaneseData.gallery) return;
 
-    const vocabList = japaneseData.vocabulary;
-    if (vocabList.length === 0) return;
+    const totalSlides = japaneseData.gallery.length;
+    if (totalSlides <= 1) return;
 
-    // Pick day-seeded word
-    const now = new Date();
-    const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-    currentWordIndex = dayOfYear % vocabList.length;
+    function goToSlide(index) {
+      currentSlideIndex = (index + totalSlides) % totalSlides;
+      updateSliderUI();
+    }
 
-    renderWord(currentWordIndex);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToSlide(currentSlideIndex - 1);
+        resetAutoSlide();
+      });
+    }
 
-    const nextBtn = document.getElementById('wotd-next-btn');
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
-        currentWordIndex = (currentWordIndex + 1) % vocabList.length;
-        renderWord(currentWordIndex);
+        goToSlide(currentSlideIndex + 1);
+        resetAutoSlide();
       });
     }
 
-    const audioBtn = document.getElementById('wotd-audio-btn');
-    if (audioBtn) {
-      audioBtn.addEventListener('click', () => {
-        const word = vocabList[currentWordIndex];
-        speakJapanese(word.reading || word.kanji);
-      });
-    }
-  }
-
-  function renderWord(index) {
-    const word = japaneseData.vocabulary[index];
-    if (!word) return;
-
-    const kanjiElem = document.getElementById('wotd-kanji');
-    const readingElem = document.getElementById('wotd-reading');
-    const romajiElem = document.getElementById('wotd-romaji');
-    const meaningElem = document.getElementById('wotd-meaning');
-    const exJpElem = document.getElementById('wotd-ex-jp');
-    const exEnElem = document.getElementById('wotd-ex-en');
-    const catElem = document.getElementById('wotd-category');
-
-    if (kanjiElem) kanjiElem.textContent = word.kanji;
-    if (readingElem) readingElem.textContent = `【${word.reading}】`;
-    if (romajiElem) romajiElem.textContent = `${word.romaji} • ${word.partOfSpeech}`;
-    if (meaningElem) meaningElem.textContent = word.english;
-    if (exJpElem) exJpElem.textContent = word.example;
-    if (exEnElem) exEnElem.textContent = word.exampleEnglish;
-    if (catElem) catElem.textContent = word.category;
-  }
-
-  function speakJapanese(text) {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ja-JP';
-      utterance.rate = 0.85;
-      window.speechSynthesis.speak(utterance);
-    }
-  }
-
-  // --- 3. 3D Vocabulary Flashcards ---
-  function renderVocabFlipCards() {
-    const container = document.getElementById('vocab-cards-grid');
-    if (!container || !japaneseData || !japaneseData.vocabulary) return;
-
-    container.innerHTML = japaneseData.vocabulary.map((card) => `
-      <div class="flip-card" tabindex="0" role="button" aria-label="Flashcard for ${escapeHtml(card.kanji)}. Press Enter to flip.">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <span class="badge badge-tag" style="margin-bottom: 0.75rem; font-size: 0.7rem;">${escapeHtml(card.category)}</span>
-            <div class="flip-kanji">${escapeHtml(card.kanji)}</div>
-            <div class="flip-reading">${escapeHtml(card.reading)}</div>
-            <span class="flip-hint">Click or press Enter to flip ↻</span>
-          </div>
-          <div class="flip-card-back">
-            <div style="font-weight: 700; font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.4rem;">${escapeHtml(card.english)}</div>
-            <div class="text-mono" style="font-size: 0.82rem; color: var(--accent-indigo); margin-bottom: 0.75rem;">${escapeHtml(card.romaji)}</div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.75rem;">
-              "${escapeHtml(card.exampleEnglish)}"
-            </p>
-            <button type="button" class="btn btn-outline btn-sm speak-card-btn" data-speak="${escapeHtml(card.reading)}" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
-              🔊 Listen
-            </button>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    // Flip interactions on click and keyboard
-    container.querySelectorAll('.flip-card').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        // Prevent flip if clicking speak button
-        if (e.target.closest('.speak-card-btn')) return;
-        card.classList.toggle('flipped');
-      });
-
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.classList.toggle('flipped');
+    if (dotsContainer) {
+      dotsContainer.addEventListener('click', (e) => {
+        const dot = e.target.closest('.bunkasai-dot');
+        if (!dot) return;
+        const target = parseInt(dot.getAttribute('data-target-slide'), 10);
+        if (!isNaN(target)) {
+          goToSlide(target);
+          resetAutoSlide();
         }
       });
+    }
+
+    // Click on slide image opens lightbox
+    if (track) {
+      track.addEventListener('click', (e) => {
+        const imgBox = e.target.closest('.bunkasai-slide-img-box');
+        if (!imgBox) return;
+        const slide = imgBox.closest('.bunkasai-slide');
+        const idx = slide ? parseInt(slide.getAttribute('data-slide-index'), 10) : currentSlideIndex;
+        openLightbox(idx);
+      });
+
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const imgBox = e.target.closest('.bunkasai-slide-img-box');
+          if (imgBox) {
+            e.preventDefault();
+            const slide = imgBox.closest('.bunkasai-slide');
+            const idx = slide ? parseInt(slide.getAttribute('data-slide-index'), 10) : currentSlideIndex;
+            openLightbox(idx);
+          }
+        }
+      });
+    }
+
+    // Pause on hover or focus
+    wrapper.addEventListener('mouseenter', () => {
+      isHovered = true;
+      stopAutoSlide();
+    });
+    wrapper.addEventListener('mouseleave', () => {
+      isHovered = false;
+      startAutoSlide();
+    });
+    wrapper.addEventListener('focusin', () => {
+      isHovered = true;
+      stopAutoSlide();
+    });
+    wrapper.addEventListener('focusout', () => {
+      isHovered = false;
+      startAutoSlide();
     });
 
-    // Listen buttons
-    container.querySelectorAll('.speak-card-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const text = btn.getAttribute('data-speak');
-        if (text) speakJapanese(text);
-      });
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          goToSlide(currentSlideIndex + 1);
+        } else {
+          goToSlide(currentSlideIndex - 1);
+        }
+        resetAutoSlide();
+      }
+    }
+
+    // Keyboard navigation when wrapper is focused or active
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToSlide(currentSlideIndex - 1);
+        resetAutoSlide();
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentSlideIndex + 1);
+        resetAutoSlide();
+      }
+    });
+
+    startAutoSlide();
+  }
+
+  function updateSliderUI() {
+    const track = document.getElementById('bunkasai-slides-track');
+    const counter = document.getElementById('bunkasai-slide-counter');
+    const dots = document.querySelectorAll('.bunkasai-dot');
+    if (!track || !japaneseData || !japaneseData.gallery) return;
+
+    const total = japaneseData.gallery.length;
+    track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+    if (counter) {
+      counter.textContent = `${currentSlideIndex + 1} / ${total}`;
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentSlideIndex);
+      dot.setAttribute('aria-selected', idx === currentSlideIndex ? 'true' : 'false');
     });
   }
 
-  // --- 4. Study Resources ---
-  function renderStudyResources() {
-    const container = document.getElementById('study-resources-list');
-    if (!container || !japaneseData || !japaneseData.studyResources) return;
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideTimer = setInterval(() => {
+      if (!isHovered && japaneseData && japaneseData.gallery) {
+        currentSlideIndex = (currentSlideIndex + 1) % japaneseData.gallery.length;
+        updateSliderUI();
+      }
+    }, 3500);
+  }
 
-    container.innerHTML = japaneseData.studyResources.map((res) => `
-      <div class="card" style="padding: 1.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span class="badge badge-progress">${escapeHtml(res.type)}</span>
-          <span class="badge badge-tag">${escapeHtml(res.status)}</span>
-        </div>
-        <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem;">${escapeHtml(res.name)}</h4>
-        <p style="font-size: 0.88rem; color: var(--text-secondary);">${escapeHtml(res.description)}</p>
-      </div>
-  // --- 5. Bunkasai 2026 Cultural Festival Gallery ---
+  function stopAutoSlide() {
+    if (autoSlideTimer) {
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = null;
+    }
+  }
+
+  function resetAutoSlide() {
+    stopAutoSlide();
+    if (!isHovered) {
+      startAutoSlide();
+    }
+  }
+
+  // --- 3. Bunkasai 2026 Cultural Festival Gallery Grid ---
   function renderBunkasaiGallery() {
     const container = document.getElementById('jp-gallery-grid');
     if (!container || !japaneseData || !japaneseData.gallery) return;
@@ -216,7 +259,7 @@
     });
   }
 
-  // --- 6. Lightbox Modal Interactions ---
+  // --- 4. Lightbox Modal Interactions ---
   function initLightbox() {
     const backdrop = document.getElementById('jp-lightbox');
     const closeBtn = document.getElementById('jp-lightbox-close');

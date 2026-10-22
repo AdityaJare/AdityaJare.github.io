@@ -2079,6 +2079,199 @@ p:last-child {
   color: var(--text-primary);
 }
 
+/* ==========================================================================
+   BUNKASAI AUTO-SLIDER COMPONENT
+   ========================================================================== */
+.bunkasai-slider-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: #090e1a;
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.bunkasai-slider-viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bunkasai-slider-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.bunkasai-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.bunkasai-slide-img-box {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 480px;
+  overflow: hidden;
+  background: #060913;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.bunkasai-slide-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.bunkasai-slide:hover .bunkasai-slide-img-box img {
+  transform: scale(1.02);
+}
+
+.bunkasai-slide-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bunkasai-slide-info {
+  padding: 1.15rem 1.4rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 15, 30, 0.98) 100%);
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bunkasai-slide-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bunkasai-slide-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Slider Navigation Buttons */
+.bunkasai-slider-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(245, 158, 11, 0.6);
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.bunkasai-slider-btn:hover {
+  background: #fbbf24;
+  color: #0f172a;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+.bunkasai-slider-prev {
+  left: 0.85rem;
+}
+
+.bunkasai-slider-next {
+  right: 0.85rem;
+}
+
+.bunkasai-slider-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: rgba(10, 15, 30, 0.95);
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.bunkasai-counter-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fbbf24;
+  font-family: var(--font-mono);
+  background: rgba(245, 158, 11, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.bunkasai-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.bunkasai-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-fast);
+}
+
+.bunkasai-dot.active {
+  width: 24px;
+  background: #fbbf24;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+}
+
+.bunkasai-slider-playpause {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+
 /* Gallery Grid */
 .jp-gallery-grid {
   display: grid;

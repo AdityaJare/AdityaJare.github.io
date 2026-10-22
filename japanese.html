@@ -92,82 +92,6 @@
           </div>
         </div>
 
-        <!-- Interactive Section 1: Word of the Day (driven by data/japanese.json) -->
-        <div class="word-of-day-card" id="wotd-card" aria-label="Interactive Japanese Word of the Day">
-          <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-            <span class="badge badge-progress">Featured Vocabulary</span>
-            <span class="badge badge-tag" id="wotd-category">Tech &amp; AI</span>
-          </div>
-
-          <div class="wotd-kanji" id="wotd-kanji">人工知能</div>
-          <div class="wotd-reading" id="wotd-reading">【じんこうちのう】</div>
-          <div class="wotd-romaji" id="wotd-romaji">jinkō chinō • Noun</div>
-          <div class="wotd-meaning" id="wotd-meaning">Artificial Intelligence (AI)</div>
-
-          <div class="wotd-example-box">
-            <p style="font-family: var(--font-jp); font-size: 1.05rem; color: var(--text-primary); margin-bottom: 0.4rem;" id="wotd-ex-jp">
-              人工知能とコンピュータビジョンの研究に情熱を注いでいます。
-            </p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;" id="wotd-ex-en">
-              I am passionate about research in artificial intelligence and computer vision.
-            </p>
-          </div>
-
-          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
-            <button type="button" class="btn btn-secondary btn-sm" id="wotd-audio-btn" aria-label="Listen to Japanese pronunciation">
-              🔊 Pronounce (Audio)
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" id="wotd-next-btn">
-              Next Word ↻
-            </button>
-          </div>
-        </div>
-
-        <!-- Interactive Section 2: Vocabulary Flip Cards -->
-        <div style="margin-bottom: 3.5rem;">
-          <div class="section-header" style="margin-bottom: 2rem;">
-            <span class="section-eyebrow">Interactive Flashcards</span>
-            <h2 class="section-title" style="font-size: 1.8rem;">Vocabulary &amp; Technical Terms</h2>
-            <p class="section-description">
-              Click or press <kbd style="background: var(--bg-card); padding: 0.2rem 0.4rem; border-radius: 4px; border: 1px solid var(--border-subtle); font-size: 0.8rem;">Enter</kbd> to flip each card to reveal English readings and contextual sentence usage.
-            </p>
-          </div>
-
-          <div class="vocab-cards-grid" id="vocab-cards-grid" aria-live="polite">
-            <!-- Populated from data/japanese.json -->
-          </div>
-        </div>
-
-        <!-- Skills Grid: Hiragana, Katakana, Kanji, vocabulary, grammar, listening, speaking, reading, writing -->
-        <div style="margin-bottom: 3.5rem;">
-          <div class="section-header" style="margin-bottom: 2rem;">
-            <span class="section-eyebrow">Competency Matrix</span>
-            <h2 class="section-title" style="font-size: 1.8rem;">Language Skills Breakdown</h2>
-            <p class="section-description">
-              Overview of all 9 language dimensions with current progress labels [Add your own levels].
-            </p>
-          </div>
-
-          <div class="jp-skills-grid" id="jp-skills-grid">
-            <!-- Populated dynamically from data/japanese.json -->
-          </div>
-        </div>
-
-        <!-- Study Resources -->
-        <div style="margin-bottom: 3.5rem;">
-          <div class="section-header" style="margin-bottom: 2rem;">
-            <span class="section-eyebrow">Curriculum &amp; Tools</span>
-            <h2 class="section-title" style="font-size: 1.8rem;">JLPT N3 Study Resources</h2>
-            <p class="section-description">
-              Core textbooks, daily spaced repetition decks, and drill schedules.
-            </p>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;" id="study-resources-list">
-            <!-- Populated from data/japanese.json -->
-          </div>
-        </div>
-
         <!-- Bunkasai 2026 Grand Winner Showcase -->
         <section class="bunkasai-showcase-card" aria-labelledby="bunkasai-heading">
           <div class="bunkasai-header">
@@ -192,6 +116,35 @@
             <span class="bunkasai-meta-item">
               <strong>School:</strong> AtoJ Hirameki Japanese Language Classes
             </span>
+          </div>
+
+          <!-- Bunkasai 2026 Auto-Slider -->
+          <div class="bunkasai-slider-wrapper" id="bunkasai-slider" aria-label="Bunkasai 2026 Festival Highlights Slider">
+            <div class="bunkasai-slider-viewport">
+              <div class="bunkasai-slider-track" id="bunkasai-slides-track">
+                <!-- Populated dynamically from data/japanese.json gallery -->
+              </div>
+            </div>
+
+            <!-- Previous and Next Arrow Buttons -->
+            <button type="button" class="bunkasai-slider-btn bunkasai-slider-prev" id="bunkasai-prev-btn" aria-label="Previous Festival Slide">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="bunkasai-slider-btn bunkasai-slider-next" id="bunkasai-next-btn" aria-label="Next Festival Slide">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <!-- Bottom Navigation Bar with Dots and Counter -->
+            <div class="bunkasai-slider-bottom-bar">
+              <span class="bunkasai-counter-badge" id="bunkasai-slide-counter">1 / 8</span>
+              <div class="bunkasai-slider-dots" id="bunkasai-dots" role="tablist" aria-label="Slide Selection">
+                <!-- Dots populated by JS -->
+              </div>
+              <span class="bunkasai-slider-playpause">
+                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
+                Auto-sliding • Hover to pause
+              </span>
+            </div>
           </div>
 
           <!-- 4 Cultural Themes Grid -->
@@ -226,25 +179,19 @@
             </div>
           </div>
 
-          <!-- Exact Story Summary -->
+          <!-- Summarized Bunkasai Narrative -->
           <div class="bunkasai-story-body">
             <p>
-              We are absolutely over the moon!! 🎉🎊 Bunkasai 2026 — a Japanese Cultural Festival held at Yashwantrao Chavan Kaladalan, Pune — and our team just brought home #1 Best Project on the very FIRST edition of this amazing event!! 🙌🔥
+              <strong>🏆 1st Place Victory:</strong> Our team brought home <strong>#1 Best Project</strong> at the inaugural <strong>Bunkasai 2026</strong> Japanese Cultural Festival in Pune. Batches <strong>Fushimi</strong> and <strong>Akagi</strong> joined hands to build an interactive cultural showcase celebrating Japanese folklore and traditions.
             </p>
             <p>
-              Our batches — <strong>Fushimi</strong> and <strong>Akagi</strong> — came together and built something truly special. Every single person in both batches gave it everything — the creativity, the preparation, the energy, the passion. Watching visitors light up as they learned about each tradition made it all SO worth it! 😍
+              <strong>🎋 Immersive Cultural Booths:</strong> Our centerpiece booth, <em>"Unmei to Negai no Monogatari"</em> (Story of Fate &amp; Wishes), brought traditional festivals to life with authentic Tanabata wish-making, Daruma goal determination ceremonies, hand-drawn Omikuji fortune slips, and Juunishi zodiac lore.
             </p>
             <div class="bunkasai-quote-highlight">
-              💬 <em>"One of the most unforgettable highlights for me personally? I got to speak with a native Japanese speaker entirely in Japanese, explaining the history and traditions of Tanabata to him. The look on his face when I spoke — priceless!! 😄🗣️🇯🇵 And it wasn't just me — so many of our team members got to have real conversations with Japanese people throughout the event. Putting our learning into practice, live, in the moment — THAT is what this journey is all about!! 💪🔥"</em>
+              💬 <em>"One of the most unforgettable milestones for me was conversing live and entirely in Japanese with native Japanese visitors, explaining the historical significance of Tanabata. Putting classroom learning into spontaneous practice in real time was priceless — that is what this language journey is all about!"</em>
             </div>
-            <p>
-              And honestly — the whole festival was INCREDIBLE. Kimono try-ons 👘, omikuji fortune booths, chopstick challenges 🥢, a Sapporo Snow Festival corner ❄️, 3D shrine models ⛩️… two days of pure Japanese culture magic!
-            </p>
-            <p>
-              This win is for EVERY member of Fushimi and Akagi. Every late night, every decoration, every practice session — it all paid off. We couldn't be prouder of this team! 🌸🔥
-            </p>
-            <p style="font-weight: 700; color: #fbbf24; margin-top: 1rem;">
-              Massive thank you to AtoJ Hirameki Japanese Language Classes, our amazing teachers, organizers, and volunteers! You made this dream possible 💙 チームワーク最高!! Best team ever!! 🚀🎌
+            <p style="font-weight: 700; color: #fbbf24; margin: 0;">
+              Special thanks to AtoJ Hirameki Japanese Language Classes, senseis, and our incredible team — チームワーク最高!! 🚀🎌
             </p>
           </div>
 
