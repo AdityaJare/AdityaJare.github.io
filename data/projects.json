@@ -71,6 +71,33 @@
     ]
   },
   {
+    "id": "finpulse",
+    "title": "FinPulse: AI Financial & Earnings Call Research Copilot",
+    "categoryTags": ["RAG", "ML"],
+    "summary": "Institutional-grade RAG copilot analyzing corporate earnings call transcripts and SEC filings with numerical grounding, verifiable citations, and cross-company guidance inconsistency detection.",
+    "featured": true,
+    "status": "Deployed on Streamlit Cloud",
+    "image": "assets/images/finpulse.png",
+    "problem": "Analyzing lengthy corporate earnings calls, SEC 10-K/10-Q filings, and financial metrics is slow and manual, while general LLMs hallucinate financial numbers and lack verifiable grounding.",
+    "dataset": "Indexed earnings call transcripts and SEC reports across global enterprise technology leaders (NVIDIA, Apple, Microsoft, Alphabet/Google, Tesla) with dynamic PDF/TXT/MD ingestion.",
+    "methodology": "Dual-stage RAG architecture combining ChromaDB vector similarity search, BGE cross-encoder reranking, and citation synthesis with strict zero-hallucination guardrails and confidence scoring via Groq LLM inference.",
+    "technologies": ["Python", "Streamlit", "ChromaDB", "Groq API", "BGE Cross-Encoder", "Sentence Transformers", "LangChain", "Vector Search"],
+    "keyResults": "Instant financial Q&A with document-level citations and verbatim snippets, colored confidence badges (High/Medium/Low), and automated peer comparison reasoning (e.g., NVIDIA vs Microsoft CapEx).",
+    "role": "Sole AI Developer: Engineered retrieval and cross-encoder reranking pipeline, implemented citation synthesis and confidence scoring, built Streamlit workspace UI, and deployed to Streamlit Community Cloud.",
+    "challengesLearnings": "Eliminated financial hallucination by enforcing strict numerical grounding and BGE reranking over high-density chunks before synthesizing answers with source citations.",
+    "limitations": "Context retrieval relies on indexed filings; real-time market trading feeds require separate live API streaming integrations.",
+    "liveDemoUrl": "https://finpulseai.streamlit.app/",
+    "hasDemo": true,
+    "githubUrl": "https://github.com/AdityaJare/FinPulse",
+    "additionalLinks": "https://finpulseai.streamlit.app/",
+    "gallery": [
+      {
+        "caption": "FinPulse AI Financial & Earnings Call Research Copilot UI",
+        "image": "assets/images/finpulse.png"
+      }
+    ]
+  },
+  {
     "id": "strengthcast",
     "title": "StrengthCast: Concrete Compressive Strength Predictor",
     "categoryTags": ["ML"],
@@ -103,7 +130,7 @@
     "categoryTags": ["ML"],
     "summary": "Recommends optimal crops across 22 categories using soil nutrients and meteorological parameters.",
     "featured": true,
-    "status": "Deployed",
+    "status": "Deployed on Streamlit Cloud",
     "image": "assets/images/croprecommendation.png",
     "problem": "Guide farmers in selecting the most viable crop to maximize yield based on localized soil chemistry and atmospheric conditions.",
     "dataset": "22-class agricultural crop dataset containing N, P, K soil ratios, temperature, humidity, pH, and rainfall.",
@@ -113,10 +140,10 @@
     "role": "Sole ML Developer: Implemented multiclass classification modeling, automated grid search validation, and built web deployment interface.",
     "challengesLearnings": "In-depth error analysis revealed confusion primarily between rice and jute due to overlapping high-humidity and water requirement profiles.",
     "limitations": "Does not account for dynamic real-time market pricing or seasonal pests.",
-    "liveDemoUrl": "[Add URL]",
-    "hasDemo": false,
+    "liveDemoUrl": "https://adityajare-crop-recommendation-main-fgpl11.streamlit.app/",
+    "hasDemo": true,
     "githubUrl": "[Add URL]",
-    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "additionalLinks": "https://adityajare-crop-recommendation-main-fgpl11.streamlit.app/",
     "gallery": [
       {
         "caption": "Crop Recommendation Prediction Web UI",
@@ -130,7 +157,7 @@
     "categoryTags": ["ML"],
     "summary": "Predicts diagnostic diabetes onset probability using clinical patient physiological metrics.",
     "featured": true,
-    "status": "Deployed",
+    "status": "Deployed on Render",
     "image": "assets/images/diabetesriskchecker.png",
     "problem": "Provide early predictive risk assessment for diabetes onset to assist clinical screening workflows.",
     "dataset": "Clinical diabetes diagnostic dataset with patient blood glucose, BMI, insulin, age, and blood pressure markers.",
@@ -140,10 +167,10 @@
     "role": "ML Developer: Developed preprocessing, feature normalization pipeline, and interactive screening app.",
     "challengesLearnings": "Handled zero-value imputations for biological variables such as insulin and skinfold thickness.",
     "limitations": "Intended for screening assistance; clinical validation required.",
-    "liveDemoUrl": "[Add URL]",
-    "hasDemo": false,
+    "liveDemoUrl": "https://diabetes-risk-checker-ibky.onrender.com/",
+    "hasDemo": true,
     "githubUrl": "[Add URL]",
-    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "additionalLinks": "https://diabetes-risk-checker-ibky.onrender.com/",
     "gallery": [
       {
         "caption": "Diabetes Risk Prediction UI & Clinical Inputs",

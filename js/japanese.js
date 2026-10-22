@@ -19,7 +19,6 @@
 
       renderBunkasaiSlider();
       initBunkasaiSliderControls();
-      renderBunkasaiGallery();
       initLightbox();
     } catch (error) {
       console.error('Error loading Japanese data:', error);
@@ -224,42 +223,7 @@
     }
   }
 
-  // --- 3. Bunkasai 2026 Cultural Festival Gallery Grid ---
-  function renderBunkasaiGallery() {
-    const container = document.getElementById('jp-gallery-grid');
-    if (!container || !japaneseData || !japaneseData.gallery) return;
-
-    container.innerHTML = japaneseData.gallery.map((item, index) => `
-      <article class="jp-gallery-card" tabindex="0" role="button" aria-label="View photo: ${escapeHtml(item.title)}. Press Enter to enlarge." data-index="${index}">
-        <div class="jp-gallery-thumb-frame">
-          <span class="jp-gallery-badge-overlay">${escapeHtml(item.category)}</span>
-          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt || item.title)}" loading="lazy" />
-        </div>
-        <div class="jp-gallery-card-content">
-          <h4 class="jp-gallery-card-title">${escapeHtml(item.title)}</h4>
-          <p class="jp-gallery-card-desc">${escapeHtml(item.description || item.alt)}</p>
-          <span class="jp-gallery-zoom-hint">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            Click to enlarge
-          </span>
-        </div>
-      </article>
-    `).join('');
-
-    // Bind click and Enter key events to open lightbox
-    container.querySelectorAll('.jp-gallery-card').forEach((card) => {
-      const idx = parseInt(card.getAttribute('data-index'), 10);
-      card.addEventListener('click', () => openLightbox(idx));
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox(idx);
-        }
-      });
-    });
-  }
-
-  // --- 4. Lightbox Modal Interactions ---
+  // --- 3. Lightbox Modal Interactions ---
   function initLightbox() {
     const backdrop = document.getElementById('jp-lightbox');
     const closeBtn = document.getElementById('jp-lightbox-close');
