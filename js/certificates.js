@@ -79,9 +79,12 @@
       ? `<a href="projects.html" class="btn btn-secondary btn-sm" title="View associated research project">Related Project</a>`
       : '';
 
+    const isWhiteBg = cert.category === 'Japanese' || (cert.image && cert.image.includes('NAT'));
+    const frameStyle = isWhiteBg ? ' style="background: #ffffff; padding: 0.35rem;"' : '';
+
     return `
       <article class="card cert-card">
-        <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener noreferrer" class="cert-badge-frame" title="Click to verify ${escapeHtml(cert.title)}">
+        <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener noreferrer" class="cert-badge-frame"${frameStyle} title="Click to verify ${escapeHtml(cert.title)}">
           <img src="${escapeHtml(cert.image || 'assets/images/cert-placeholder.svg')}" alt="Badge for ${escapeHtml(cert.title)}" loading="lazy" />
         </a>
         <div style="flex-grow: 1; display: flex; flex-direction: column;">

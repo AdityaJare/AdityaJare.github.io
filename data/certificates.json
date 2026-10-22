@@ -321,5 +321,24 @@
     "verificationUrl": "assets/images/NAT-N4.png",
     "relatedProjectId": null,
     "notes": "Official Score Report for Aditya Shivdatta Jare. Passed 4Q (N4 equivalent) test conducted April 2026. Actively preparing for JLPT N3."
+  },
+  {
+    "id": "nat-test-n5",
+    "title": "Japanese Language NAT-TEST (Level 5Q / N5 Equivalent)",
+    "issuer": "Japanese Language NAT-TEST Steering Committee (Senmon Kyouiku Publishing Co., Ltd.)",
+    "category": "Japanese",
+    "issueDate": "February 26, 2025",
+    "expiryDate": null,
+    "credentialId": "25020048150102",
+    "skillsCovered": [
+      "Language Knowledge (Kanji, Vocab, Grammar) & Reading: 57/120",
+      "Listening Comprehension: 25/60",
+      "Total Score: 82/180 (Pass Result)",
+      "Foundation for NAT-TEST N4 & JLPT N3"
+    ],
+    "image": "assets/images/NAT-N5.png",
+    "verificationUrl": "assets/images/NAT-N5.png",
+    "relatedProjectId": null,
+    "notes": "Official Score Report for Aditya Shivdatta Jare. Passed 5Q (N5 equivalent) test conducted February 2025 with sectional passes in Language Knowledge and Listening."
   }
 ]
