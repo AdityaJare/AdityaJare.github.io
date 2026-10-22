@@ -1,0 +1,59 @@
+[
+  {
+    "id": "cert-placeholder-1",
+    "title": "[Add your certificate title, e.g. Deep Learning Specialization / Machine Learning]",
+    "issuer": "[Add issuing organization / platform, e.g. Coursera / DeepLearning.AI / Stanford Online]",
+    "category": "Deep Learning",
+    "issueDate": "[Add issue date, e.g. Month Year]",
+    "expiryDate": null,
+    "credentialId": "[Add Credential ID / Verification Code]",
+    "skillsCovered": [
+      "Artificial Neural Networks (ANN)",
+      "Convolutional Neural Networks (CNN)",
+      "Transfer Learning",
+      "TensorFlow/Keras"
+    ],
+    "image": "assets/images/cert-placeholder.svg",
+    "verificationUrl": "[Add Verify Credential link]",
+    "relatedProjectId": "age-gender-estimation",
+    "notes": "Include the ANN and CNN course completions when adding your official certificates."
+  },
+  {
+    "id": "cert-placeholder-2",
+    "title": "[Add your Machine Learning / Data Science Certificate]",
+    "issuer": "[Add issuing organization]",
+    "category": "AI/ML",
+    "issueDate": "[Add issue date]",
+    "expiryDate": null,
+    "credentialId": "[Add Credential ID]",
+    "skillsCovered": [
+      "Supervised Learning",
+      "Model Evaluation",
+      "Feature Engineering",
+      "scikit-learn"
+    ],
+    "image": "assets/images/cert-placeholder.svg",
+    "verificationUrl": "[Add Verify Credential link]",
+    "relatedProjectId": "strengthcast",
+    "notes": "[Add notes]"
+  },
+  {
+    "id": "cert-placeholder-3",
+    "title": "[Add your Japanese Language Proficiency Certificate, e.g. JLPT N4 / N3 Target]",
+    "issuer": "[Add issuer, e.g. Japan Foundation / JEES]",
+    "category": "Japanese",
+    "issueDate": "[Add issue date or scheduled December exam]",
+    "expiryDate": null,
+    "credentialId": "[Add Credential ID]",
+    "skillsCovered": [
+      "JLPT N3 Grammar",
+      "Kanji & Vocabulary",
+      "Reading Comprehension",
+      "Technical Japanese"
+    ],
+    "image": "assets/images/cert-placeholder.svg",
+    "verificationUrl": "[Add Verify Credential link]",
+    "relatedProjectId": null,
+    "notes": "Targeting JLPT N3 December Exam."
+  }
+]

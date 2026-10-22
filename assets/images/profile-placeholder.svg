@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(56, 189, 248, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="400" rx="32" fill="url(#avatarBg)"/>
+  <rect width="400" height="400" rx="32" fill="url(#grid)"/>
+
+  <!-- Computer Vision Bounding Box Reticle -->
+  <rect x="50" y="50" width="300" height="300" rx="20" fill="none" stroke="url(#accentGlow)" stroke-width="2" stroke-dasharray="6 6" stroke-opacity="0.4"/>
+  <path d="M 50 80 L 50 50 L 80 50" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M 350 80 L 350 50 L 320 50" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M 50 320 L 50 350 L 80 350" fill="none" stroke="#818cf8" stroke-width="3"/>
+  <path d="M 350 320 L 350 350 L 320 350" fill="none" stroke="#818cf8" stroke-width="3"/>
+
+  <!-- AI / Neural Nodes Background -->
+  <circle cx="200" cy="150" r="54" fill="#1e293b" stroke="url(#accentGlow)" stroke-width="3"/>
+  <!-- Stylized Head Silhouette -->
+  <path d="M 170 150 C 170 133 183 120 200 120 C 217 120 230 133 230 150 C 230 167 217 180 200 180 C 183 180 170 167 170 150 Z" fill="#38bdf8" fill-opacity="0.8"/>
+  <path d="M 140 250 C 140 215 167 195 200 195 C 233 195 260 215 260 250 Z" fill="#818cf8" fill-opacity="0.8"/>
+
+  <!-- Detection Label Pill -->
+  <rect x="110" y="275" width="180" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="200" y="295" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle" letter-spacing="1">OBJECT: DEVELOPER 99.8%</text>
+
+  <!-- Notice label -->
+  <rect x="80" y="325" width="240" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="#64748b" stroke-width="1"/>
+  <text x="200" y="342" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">[Add your photo with alt text]</text>
+</svg>

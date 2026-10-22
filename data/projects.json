@@ -1,0 +1,236 @@
+[
+  {
+    "id": "strengthcast",
+    "title": "StrengthCast: Concrete Compressive Strength Predictor",
+    "categoryTags": ["ML", "Web App"],
+    "summary": "Predicts concrete compressive strength from mix ratios and curing age using high-performance regression pipelines.",
+    "featured": true,
+    "status": "Deployed on Streamlit Cloud",
+    "problem": "Predict concrete compressive strength based on constituent mix proportions and curing duration, replacing slow 28-day physical cylinder break tests.",
+    "dataset": "Concrete Compressive Strength dataset (cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, fine aggregate, age in days).",
+    "methodology": "Exploratory data analysis, scikit-learn ColumnTransformer preprocessing pipeline saved with joblib, and extensive regression model benchmarking.",
+    "technologies": ["Python", "scikit-learn", "XGBoost", "Random Forest", "Streamlit", "Joblib", "Pandas", "NumPy"],
+    "keyResults": "Compared Linear Regression (R² 0.63), Random Forest (R² 0.88), and XGBoost (R² 0.93, RMSE 4.28 MPa, MAE 2.96 MPa).",
+    "role": "Sole ML Developer: Designed preprocessing pipeline, performed cross-validation & hyperparameter tuning, built and deployed interactive Streamlit web application.",
+    "challengesLearnings": "Strength depends nonlinearly on curing age, which linear models miss completely. Successfully captured nonlinear interaction dynamics using tree ensemble pipelines.",
+    "limitations": "Model predictions are calibrated specifically within the domain bounds of standard concrete constituent ratios and standard curing conditions.",
+    "liveDemoUrl": "[Add URL]",
+    "hasDemo": false,
+    "githubUrl": "https://github.com/AdityaJare/StrengthCast",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "StrengthCast Architecture & Prediction Pipeline",
+        "placeholderText": "Streamlit Cloud UI & Regression Residuals"
+      }
+    ]
+  },
+  {
+    "id": "crop-recommendation",
+    "title": "Crop Recommendation System",
+    "categoryTags": ["ML", "Web App"],
+    "summary": "Recommends optimal crops across 22 categories using soil nutrients and meteorological parameters.",
+    "featured": true,
+    "status": "Deployed",
+    "problem": "Guide farmers in selecting the most viable crop to maximize yield based on localized soil chemistry and atmospheric conditions.",
+    "dataset": "22-class agricultural crop dataset containing N, P, K soil ratios, temperature, humidity, pH, and rainfall.",
+    "methodology": "Multi-class classification pipeline comparing SVC, Logistic Regression, and Random Forest evaluated with GridSearchCV hyperparameter tuning, followed by confusion matrix error analysis.",
+    "technologies": ["Python", "scikit-learn", "Random Forest", "GridSearchCV", "Pandas", "NumPy", "Streamlit"],
+    "keyResults": "Random Forest achieved the best performance with ~99% test accuracy across 22 crop classes.",
+    "role": "Sole ML Developer: Implemented multiclass classification modeling, automated grid search validation, and built web deployment interface.",
+    "challengesLearnings": "In-depth error analysis revealed confusion primarily between rice and jute due to overlapping high-humidity and water requirement profiles.",
+    "limitations": "[Add limitations, e.g. does not account for dynamic real-time market pricing or seasonal pests.]",
+    "liveDemoUrl": "[Add URL]",
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Multi-class Crop Classification & Feature Distributions",
+        "placeholderText": "Soil Nutrient & Climate Feature Analysis"
+      }
+    ]
+  },
+  {
+    "id": "diabetes-risk-prediction",
+    "title": "Diabetes Risk Prediction",
+    "categoryTags": ["ML", "Web App"],
+    "summary": "Predicts diagnostic diabetes onset probability using clinical patient physiological metrics.",
+    "featured": true,
+    "status": "Deployed",
+    "problem": "Provide early predictive risk assessment for diabetes onset to assist clinical screening workflows.",
+    "dataset": "[Add dataset]",
+    "methodology": "Data preprocessing, feature scaling, classification benchmarking, and interactive deployment.",
+    "technologies": ["Python", "scikit-learn", "Pandas", "NumPy", "Streamlit", "[Add other technologies]"],
+    "keyResults": "[Add models compared, metrics, and your role.]",
+    "role": "[Add your role]",
+    "challengesLearnings": "[Add challenges and learnings]",
+    "limitations": "[Add limitations]",
+    "liveDemoUrl": "[Add URL]",
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Clinical Diabetes Diagnostic Screening Interface",
+        "placeholderText": "Model ROC Curve & Calibration"
+      }
+    ]
+  },
+  {
+    "id": "bank-marketing-campaign",
+    "title": "Bank Marketing Campaign Predictor",
+    "categoryTags": ["ML", "ANN"],
+    "summary": "Predicts customer term-deposit subscriptions on 41k records addressing high class imbalance and data leakage.",
+    "featured": true,
+    "status": "Notebook only",
+    "problem": "Optimize telemarketing targeting efficiency by predicting customer willingness to subscribe to long-term bank deposits while preventing target data leakage.",
+    "dataset": "Bank Marketing dataset containing 41,000+ campaign records with high class imbalance (11% positive subscribers).",
+    "methodology": "Removed the leaky 'duration' feature to ensure real-world predictive validity, handled 'unknown' categorical values cleanly inside the pipeline, applied class weights to balance 11% minority positives, and benchmarked a Keras Tuner-optimized ANN against XGBoost.",
+    "technologies": ["Python", "TensorFlow/Keras", "Keras Tuner", "XGBoost", "scikit-learn", "Pandas", "NumPy"],
+    "keyResults": "Tuned ANN (ROC-AUC 0.799) vs XGBoost (ROC-AUC 0.811), both achieving ~65% recall on subscribers, delivering a 3.4x lift over random calling.",
+    "role": "Sole ML/DL Researcher: Led exploratory data analysis, leakage auditing, pipeline design, hyperparameter search with Keras Tuner, and lift curve evaluation.",
+    "challengesLearnings": "Identified that gradient boosting matched a tuned ANN with far less computational overhead and faster training iterations, highlighting the practical efficiency of tree ensembles for structured tabular data.",
+    "limitations": "Phone campaign response dynamics can drift over varying macroeconomic interest rate cycles.",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Keras Tuner Hyperband Search vs XGBoost Comparison",
+        "placeholderText": "ROC Curves & Lift Chart"
+      }
+    ]
+  },
+  {
+    "id": "employee-attrition-prediction",
+    "title": "Employee Attrition Prediction",
+    "categoryTags": ["ML", "ANN"],
+    "summary": "Identifies organizational turnover drivers and leaver probabilities under severe class imbalance.",
+    "featured": false,
+    "status": "Notebook only",
+    "problem": "Predict employee flight risk to enable proactive retention interventions in human resources management.",
+    "dataset": "HR Employee Attrition dataset characterized by 16% positive leavers (84% retention).",
+    "methodology": "Cross-validated classification models addressing imbalance; tested Logistic Regression with balanced weighting against an unweighted ANN to study class penalty effects.",
+    "technologies": ["Python", "scikit-learn", "TensorFlow/Keras", "Pandas", "NumPy", "Matplotlib"],
+    "keyResults": "Logistic Regression won on cross-validated ROC-AUC (0.83) with recall 0.66 on leavers; untuned-for-imbalance ANN scored recall 0.32. [Add final ANN result after class weights.]",
+    "role": "Sole Developer & Analyst: Investigated class imbalance techniques, designed evaluation matrices, and analyzed metric divergence between weighted linear models and neural networks.",
+    "challengesLearnings": "Unequivocally demonstrated that deep neural networks require explicit class weighting or focal loss on tabular imbalanced sets; otherwise, gradients get overwhelmed by majority classes.",
+    "limitations": "HR perception factors such as team morale and peer management dynamics are unquantified in static tabular records.",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Precision-Recall Trade-off & Imbalance Penalty",
+        "placeholderText": "Class Weight Impact Comparison"
+      }
+    ]
+  },
+  {
+    "id": "california-housing-prediction",
+    "title": "California Housing Price Prediction",
+    "categoryTags": ["ANN"],
+    "summary": "Deep neural network regression for housing median values with strict data-leakage safeguards.",
+    "featured": false,
+    "status": "Notebook only",
+    "problem": "Estimate median California district housing values from demographic and geographical attributes.",
+    "dataset": "California Housing dataset comprising 20,640 census block records.",
+    "methodology": "ANN regression architecture using He normal weight initialization, batch normalization/dropout, early stopping, and outlier removal performed strictly on training splits only.",
+    "technologies": ["Python", "TensorFlow/Keras", "scikit-learn", "Pandas", "NumPy"],
+    "keyResults": "Test R² of approximately 0.77 to 0.80 (RMSE ~0.51 to 0.55 in $100k units). [Add Linear/XGBoost baseline results if run.]",
+    "role": "Sole DL Developer: Formulated regression architecture, engineered training/validation split protocols to prevent leakage, and resolved convergence anomalies.",
+    "challengesLearnings": "Diagnosed and resolved a subtle training bug where features and targets were misaligned; detected it because loss plateaued suspiciously at the exact variance of the target variable.",
+    "limitations": "Historical pricing census data does not reflect contemporary inflation and current real estate valuation shifts.",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Convergence Curve & Spatial Price Heatmap",
+        "placeholderText": "Validation Loss with Early Stopping"
+      }
+    ]
+  },
+  {
+    "id": "stellar-object-classification",
+    "title": "Stellar Object Classification",
+    "categoryTags": ["ANN"],
+    "summary": "Classifies SDSS astronomical objects into galaxies, quasars, and stars with spectral band ablation.",
+    "featured": false,
+    "status": "Notebook only",
+    "problem": "Automate spectroscopic astronomical taxonomy for massive sky survey datasets from the Sloan Digital Sky Survey (SDSS).",
+    "dataset": "25k SDSS spectral and photometric observation records across 3 classes: Galaxy, Quasar, and Star.",
+    "methodology": "Trained and benchmarked ANN architectures and XGBoost under two experimental regimes: full spectrum with redshift versus photometric color bands only.",
+    "technologies": ["Python", "TensorFlow/Keras", "XGBoost", "scikit-learn", "Pandas", "NumPy"],
+    "keyResults": "With redshift: ANN achieved ~97% and XGBoost ~98% accuracy. Without redshift (photometric bands only): XGBoost 86% and ANN 75%, with stars being hardest to identify.",
+    "role": "Sole ML/DL Researcher: Devised feature ablation experiments, trained classification models, and interpreted feature importance.",
+    "challengesLearnings": "Discovered that a single feature (redshift) carried the vast majority of predictive discrimination; ablation proved the critical reliance models develop on dominant physical markers.",
+    "limitations": "High sensitivity to redshift accuracy; photometric-only estimation struggles when spectral resolution is degraded.",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "SDSS Spectral Ablation & Confusion Matrix",
+        "placeholderText": "Ablation Study: Redshift vs Color Bands"
+      }
+    ]
+  },
+  {
+    "id": "vehicle-type-classification",
+    "title": "Vehicle Type Classification",
+    "categoryTags": ["CNN"],
+    "summary": "Transfer learning computer vision model classifying 10 vehicle categories using MobileNetV2.",
+    "featured": true,
+    "status": "Notebook only",
+    "problem": "Classify complex multi-class road transport vehicles across 10 diverse categories in real-world driving environments.",
+    "dataset": "Multi-class vehicle imagery covering 10 distinct classes: bus, bike, CNG, easy-bike, hatchback, MPV, pickup, SUV, sedan, truck.",
+    "methodology": "Transfer learning architecture utilizing MobileNetV2 backbone, in-model data augmentation layers (RandomFlip, RandomRotation, RandomZoom), followed by two-stage fine-tuning.",
+    "technologies": ["Python", "TensorFlow/Keras", "MobileNetV2", "Computer Vision", "Data Augmentation", "NumPy"],
+    "keyResults": "Validation accuracy reached 85.9%; evaluated on a separate 100-image out-of-distribution test set yielding 71% accuracy. Weakest classes: pickup (confused with truck) and hatchback/sedan.",
+    "role": "Computer Vision Developer: Architected transfer learning pipeline, built data pipelines with tf.data, implemented data augmentation, and debugged evaluation metrics.",
+    "challengesLearnings": "Uncovered a label-order mismatch between folder directory alphanumeric sorting and training label indexing that caused the initial test score to show 42%; rectified the class mapping pipeline to unlock the true 71% generalization score.",
+    "limitations": "Suffers from visual confusion in ambiguous angles between geometrically similar body shapes (pickup vs truck, sedan vs hatchback).",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "MobileNetV2 Transfer Learning Architecture & Confusion Matrix",
+        "placeholderText": "Vehicle 10-Class Confusion Matrix & Grad-CAM"
+      }
+    ]
+  },
+  {
+    "id": "age-gender-estimation",
+    "title": "Age and Gender Estimation from Faces",
+    "categoryTags": ["CNN"],
+    "summary": "Multi-output CNN utilizing VGG16 with functional API for simultaneous age regression and gender classification.",
+    "featured": true,
+    "status": "Notebook only",
+    "problem": "Simultaneously estimate human age (continuous regression) and binary gender (classification) from facial crops within a unified deep network.",
+    "dataset": "UTKFace dataset containing 20k+ face images. Identified and excised ~43k duplicate files across redundant directory uploads prior to dataset splitting.",
+    "methodology": "Multi-task learning architecture with shared VGG16 convolutional feature extractor branching into dual heads via Keras Functional API: linear activation for age regression (MSE/MAE loss) and sigmoid activation for gender (Binary Cross-Entropy).",
+    "technologies": ["Python", "TensorFlow/Keras", "VGG16", "Functional API", "OpenCV", "Multi-task Learning"],
+    "keyResults": "[Add test age MAE (baseline about 15 years for predicting the mean), gender accuracy, MAE by age group].",
+    "role": "Computer Vision Researcher: Conducted dataset deduplication, implemented dual-output Keras functional graph, weighted multi-task loss functions, and conducted error audits.",
+    "challengesLearnings": "Detected and removed ~43,000 duplicate images across multi-folder archives before training to prevent severe data leakage between train/val/test splits.",
+    "limitations": "Dataset contains sparse representations for subjects aged >70, lacks longitudinal person IDs, and carries known demographic and illumination biases. Not deployed yet.",
+    "liveDemoUrl": null,
+    "hasDemo": false,
+    "githubUrl": "[Add URL]",
+    "additionalLinks": "[Add optional YouTube/blog/report link]",
+    "gallery": [
+      {
+        "caption": "Multi-head VGG16 Architecture & Dual-Output Graph",
+        "placeholderText": "Dual Head Output: Regression + Classification"
+      }
+    ]
+  }
+]

@@ -1,0 +1,168 @@
+{
+  "profile": {
+    "currentLevel": "JLPT N3 Aspirant",
+    "targetExamDate": "December",
+    "whyLearning": "[Add your reason, e.g. Fascination with Japanese innovation, precision engineering, and aspiration to pursue a Master's degree in Computer Vision in Japan while conducting bilingual AI research.]",
+    "goals": [
+      "Pass JLPT N3 in December exam",
+      "Achieve technical reading proficiency in Japanese computer vision & AI research papers",
+      "Communicate fluently with Japanese engineering teams and academic laboratories",
+      "Advance towards JLPT N2 and N1 fluency"
+    ]
+  },
+  "skills": [
+    {"name": "Hiragana (ひらがな)", "level": "Mastered", "percentage": 100, "note": "Fluent recognition and natural writing speed"},
+    {"name": "Katakana (カタカナ)", "level": "Mastered", "percentage": 100, "note": "Fluent reading for loanwords and technical vocabulary"},
+    {"name": "Kanji (漢字)", "level": "N3 in progress [Add your level]", "percentage": 65, "note": "Targeting ~650 N3 kanji; daily radical & stroke order drills"},
+    {"name": "Vocabulary (語彙)", "level": "N3 in progress [Add your level]", "percentage": 60, "note": "Active recall with spaced repetition; targeting ~3,750 words"},
+    {"name": "Grammar (文法)", "level": "N3 in progress [Add your level]", "percentage": 65, "note": "Compound particles, conditional patterns, passive & causative forms"},
+    {"name": "Reading (読解)", "level": "Intermediate [Add your level]", "percentage": 55, "note": "Short technical news articles and N3 passage reading"},
+    {"name": "Listening (聴解)", "level": "Intermediate [Add your level]", "percentage": 50, "note": "JLPT listening practice, tech podcasts, and conversational audio"},
+    {"name": "Speaking (会話)", "level": "Conversational Beginner [Add your level]", "percentage": 45, "note": "Self-introductions, technical explanations, daily conversation"},
+    {"name": "Writing (作文)", "level": "Intermediate [Add your level]", "percentage": 55, "note": "Journaling and stroke-order handwritten practice"}
+  ],
+  "studyResources": [
+    {
+      "name": "Nihongo Sou Matome N3 (Kanji & Vocabulary)",
+      "type": "Core Textbook",
+      "status": "Active Study",
+      "description": "Structured 6-week daily drill method for mastering N3 characters and contextual usage. [Add your notes]"
+    },
+    {
+      "name": "Shin Nihongo 500 Mon N3",
+      "type": "Practice Drills",
+      "status": "Weekly Review",
+      "description": "Rapid-fire 3-question daily exercises covering Kanji, Vocabulary, and Grammar. [Add your notes]"
+    },
+    {
+      "name": "Anki Spaced Repetition (SRS)",
+      "type": "Digital Flashcards",
+      "status": "Daily Routine",
+      "description": "Custom flashcard decks with audio, stroke orders, and technical AI terminology. [Add your notes]"
+    },
+    {
+      "name": "[Add additional study resources, e.g. Minna no Nihongo / Tobira / NHK News Web Easy]",
+      "type": "Supplementary",
+      "status": "Planned",
+      "description": "[Add resource description]"
+    }
+  ],
+  "gallery": [
+    {
+      "title": "Kanji Stroke Order & Radical Drills",
+      "category": "Handwritten Notes",
+      "image": "assets/images/japanese-placeholder-1.svg",
+      "alt": "[Add your photo with alt text: Kanji practice notebook showing radical breakdown and stroke orders]"
+    },
+    {
+      "title": "Grammar Patterns & Connector Flowcharts",
+      "category": "Study Notes",
+      "image": "assets/images/japanese-placeholder-2.svg",
+      "alt": "[Add your photo with alt text: Hand-drawn grammar maps comparing similar N3 conditional structures]"
+    },
+    {
+      "title": "Japanese Cultural & Engineering Interests",
+      "category": "Culture & Tech",
+      "image": "assets/images/japanese-placeholder-3.svg",
+      "alt": "[Add your photo with alt text: Exploration of Japanese robotics, culture, and robotics research institutions]"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": 1,
+      "kanji": "人工知能",
+      "reading": "じんこうちのう",
+      "romaji": "jinkō chinō",
+      "english": "Artificial Intelligence (AI)",
+      "partOfSpeech": "Noun",
+      "example": "人工知能とコンピュータビジョンの研究に情熱を注いでいます。",
+      "exampleReading": "じんこうちのう と こんぴゅーた びじょん の けんきゅう に じょうねつ を そそいでいます。",
+      "exampleEnglish": "I am passionate about research in artificial intelligence and computer vision.",
+      "category": "Tech & AI"
+    },
+    {
+      "id": 2,
+      "kanji": "画像処理",
+      "reading": "がぞうしょり",
+      "romaji": "gazō shori",
+      "english": "Image Processing / Computer Vision",
+      "partOfSpeech": "Noun",
+      "example": "畳み込みニューラルネットワークは画像処理に優れています。",
+      "exampleReading": "たたみこみ にゅーらる ねっとわーく は がぞうしょり に すぐれています。",
+      "exampleEnglish": "Convolutional Neural Networks excel at image processing.",
+      "category": "Tech & AI"
+    },
+    {
+      "id": 3,
+      "kanji": "挑戦",
+      "reading": "ちょうせん",
+      "romaji": "chōsen",
+      "english": "Challenge / Venture / Attempt",
+      "partOfSpeech": "Noun / Suru Verb",
+      "example": "新しい技術や未知の課題に積極的に挑戦します。",
+      "exampleReading": "あたらしい ぎじゅつ や みち の かだい に せっきょくてき に ちょうせん します。",
+      "exampleEnglish": "I actively take on challenges with new technologies and unknown problems.",
+      "category": "Mindset"
+    },
+    {
+      "id": 4,
+      "kanji": "改善",
+      "reading": "かいぜん",
+      "romaji": "kaizen",
+      "english": "Continuous Improvement (Kaizen)",
+      "partOfSpeech": "Noun / Suru Verb",
+      "example": "モデルのハイパーパラメータを調整して精度を改善しました。",
+      "exampleReading": "もでる の はいぱーぱらめーた を ちょうせい して せいど を かいぜん しました。",
+      "exampleEnglish": "I tuned the model hyperparameters to improve accuracy.",
+      "category": "Tech & Mindset"
+    },
+    {
+      "id": 5,
+      "kanji": "機械学習",
+      "reading": "きかいがくしゅう",
+      "romaji": "kikai gakushū",
+      "english": "Machine Learning",
+      "partOfSpeech": "Noun",
+      "example": "機械学習を用いて複雑なパターンを抽出します。",
+      "exampleReading": "きかいがくしゅう を もちいて ふくざつ な ぱたーん を ちゅうしゅつ します。",
+      "exampleEnglish": "Using machine learning to extract complex patterns.",
+      "category": "Tech & AI"
+    },
+    {
+      "id": 6,
+      "kanji": "目標",
+      "reading": "もくひょう",
+      "romaji": "mokuhyō",
+      "english": "Objective / Target Goal",
+      "partOfSpeech": "Noun",
+      "example": "私の目標はコンピュータビジョンの修士号を取得することです。",
+      "exampleReading": "わたし の もくひょう は こんぴゅーた びじょん の しゅうしごう を しゅとく する こと です。",
+      "exampleEnglish": "My goal is to obtain a Master's degree in Computer Vision.",
+      "category": "Goals"
+    },
+    {
+      "id": 7,
+      "kanji": "探求",
+      "reading": "たんきゅう",
+      "romaji": "tankyū",
+      "english": "Quest / Deep Investigation / Exploration",
+      "partOfSpeech": "Noun / Suru Verb",
+      "example": "深層学習の可能性を熱心に探求しています。",
+      "exampleReading": "しんそうがくしゅう の かのうせい を ねっしん に たんきゅう しています。",
+      "exampleEnglish": "Enthusiastically exploring the possibilities of deep learning.",
+      "category": "Mindset"
+    },
+    {
+      "id": 8,
+      "kanji": "努力",
+      "reading": "どりょく",
+      "romaji": "doryoku",
+      "english": "Diligence / Hard Work / Effort",
+      "partOfSpeech": "Noun / Suru Verb",
+      "example": "毎日の努力が確かな実力につながります。",
+      "exampleReading": "まいにち の どりょく が たしか な じつりょく に つながります。",
+      "exampleEnglish": "Daily efforts lead to dependable competence.",
+      "category": "Mindset"
+    }
+  ]
+}

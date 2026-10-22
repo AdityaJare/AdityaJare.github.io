@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="320" rx="16" fill="url(#certBg)" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <rect x="20" y="20" width="460" height="280" rx="12" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.5"/>
+  
+  <!-- Decorative Seal -->
+  <circle cx="250" cy="110" r="42" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="250" cy="110" r="32" fill="#1e293b"/>
+  <path d="M 240 110 L 247 117 L 262 102" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ribbon -->
+  <path d="M 240 145 L 235 175 L 250 165 L 265 175 L 260 145" fill="url(#goldGrad)" opacity="0.8"/>
+
+  <!-- Texts -->
+  <text x="250" y="195" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1.5">CREDENTIAL BADGE</text>
+  <text x="250" y="225" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#38bdf8" text-anchor="middle">[Add your certificates]</text>
+  <text x="250" y="250" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Official Verification &amp; Credential ID Preview</text>
+</svg>
