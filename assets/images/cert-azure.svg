@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="500" height="320">
+  <defs>
+    <linearGradient id="azBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#031d33" />
+      <stop offset="50%" stop-color="#0b2942" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="azureBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4" />
+      <stop offset="100%" stop-color="#50e6ff" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="320" rx="16" fill="url(#azBg)" stroke="#0078d4" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="18" y="18" width="464" height="284" rx="12" fill="none" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="6 4" stroke-opacity="0.8"/>
+
+  <!-- Azure Cloud Icon in Seal -->
+  <circle cx="250" cy="105" r="46" fill="#031d33" stroke="url(#azureBlue)" stroke-width="3"/>
+  <circle cx="250" cy="105" r="36" fill="none" stroke="#50e6ff" stroke-width="1" stroke-opacity="0.5"/>
+  <!-- Cloud symbol -->
+  <path d="M 236 112 A 10 10 0 0 1 246 98 A 14 14 0 0 1 262 101 A 9 9 0 0 1 267 112 Z" fill="#0078d4" stroke="#50e6ff" stroke-width="1.5"/>
+
+  <!-- Badge Ribbon -->
+  <path d="M 238 145 L 232 175 L 250 166 L 268 175 L 262 145" fill="url(#gold)"/>
+
+  <!-- Typography -->
+  <text x="250" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#50e6ff" text-anchor="middle" letter-spacing="2">MICROSOFT AZURE</text>
+  <text x="250" y="222" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" fill="#f8fafc" text-anchor="middle">Cloud Services &amp; Infrastructure</text>
+  <text x="250" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">Virtual Machines • Web Deployment • Cloud Architecture</text>
+  
+  <rect x="180" y="262" width="140" height="24" rx="12" fill="#0078d4" fill-opacity="0.25" stroke="#50e6ff" stroke-width="1"/>
+  <text x="250" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#50e6ff" text-anchor="middle">VERIFIED BADGE</text>
+</svg>

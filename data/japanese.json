@@ -49,24 +49,86 @@
   ],
   "gallery": [
     {
-      "title": "Kanji Stroke Order & Radical Drills",
-      "category": "Handwritten Notes",
-      "image": "assets/images/japanese-placeholder-1.svg",
-      "alt": "[Add your photo with alt text: Kanji practice notebook showing radical breakdown and stroke orders]"
+      "title": "Bunkasai 2026: \"Best Project #1\" Award",
+      "category": "Award & Recognition",
+      "image": "assets/bunkasai-fest/bunkasai-best-project-award.jpeg",
+      "alt": "Official Bunkasai 2026 Best Project #1 award envelope with Japanese calligraphy and Hirameki & Daruma hanko seals",
+      "description": "Awarded 1st Place (Best Project #1) at the Japanese Cultural Festival (Bunkasai 2026) for our comprehensive interactive exhibition on Japanese folklore, Daruma goal traditions, and interactive cultural booths."
     },
     {
-      "title": "Grammar Patterns & Connector Flowcharts",
-      "category": "Study Notes",
-      "image": "assets/images/japanese-placeholder-2.svg",
-      "alt": "[Add your photo with alt text: Hand-drawn grammar maps comparing similar N3 conditional structures]"
+      "title": "Cultural Stall: 運命と願いの物語 (Story of Fate & Wishes)",
+      "category": "Exhibition Stall",
+      "image": "assets/bunkasai-fest/bunkasai-exhibition-stall.jpeg",
+      "alt": "Team exhibition booth featuring hand-crafted Daruma display, Tanabata wish tree, and festive red lanterns",
+      "description": "Our centerpiece cultural booth 'Unmei to Negai no Monogatari' decorated with traditional red chochin lanterns, origami autumn leaves, Tanabata wish strips, and an authentic Omikuji fortune station."
     },
     {
-      "title": "Japanese Cultural & Engineering Interests",
-      "category": "Culture & Tech",
-      "image": "assets/images/japanese-placeholder-3.svg",
-      "alt": "[Add your photo with alt text: Exploration of Japanese robotics, culture, and robotics research institutions]"
+      "title": "Daruma Goal Tradition: だるまとは何ですか？",
+      "category": "Cultural Education",
+      "image": "assets/bunkasai-fest/bunkasai-daruma-presentation.jpeg",
+      "alt": "Aditya and teammates presenting the cultural significance of the Daruma doll and goal-setting tradition to faculty and guests",
+      "description": "Presenting the Japanese Daruma ritual to university faculty and visitors: setting an ambitious target, painting the left eye, persevering through adversity, and painting the right eye upon milestone accomplishment."
+    },
+    {
+      "title": "Omikuji (おみくじ) Shrine & Tanabata Wish Tree",
+      "category": "Interactive Booth",
+      "image": "assets/bunkasai-fest/bunkasai-omikuji-tanabata.jpeg",
+      "alt": "Interactive festival booth with handcrafted Omikuji fortune box and Tanabata paper wishes",
+      "description": "Interactive guest experience featuring hand-drawn fortune slips (Daikichi to Kyou) and vibrant Tanzaku wishing cards tied to the Tanabata bamboo lattice."
+    },
+    {
+      "title": "Traditional Japanese Yukata & Wagasa Immersion",
+      "category": "Cultural Attire",
+      "image": "assets/bunkasai-fest/bunkasai-yukata-attire.jpeg",
+      "alt": "Aditya and peers celebrating in authentic Japanese summer Yukata with obi sashes, folding fans, and paper umbrellas",
+      "description": "Embracing cultural heritage in traditional Japanese Yukata attire with matching Obi belts, handcrafted folding fans (Sensu), and traditional Japanese paper umbrellas (Wagasa)."
+    },
+    {
+      "title": "Cross-Cultural Exchange & Celebration",
+      "category": "Cultural Exchange",
+      "image": "assets/bunkasai-fest/bunkasai-cultural-exchange.jpeg",
+      "alt": "Cross-cultural festival exchange with Japanese guest and fellow language learners under illuminated lanterns",
+      "description": "Connecting and conversing in spoken Japanese with Japanese native guests, exchange students, and peers during the festival closing ceremonies."
+    },
+    {
+      "title": "Daruma Goal Craftsmanship & Kanji Motifs",
+      "category": "Handmade Craft",
+      "image": "assets/bunkasai-fest/bunkasai-daruma-detail.jpeg",
+      "alt": "Close-up of handmade traditional Daruma display and goal achievement instructions",
+      "description": "Handcrafted Daruma figures, traditional Japanese Kanji calligraphy boards, and authentic paper crafts prepared by batches Fushimi and Akagi."
     }
   ],
+  "bunkasai": {
+    "title": "🏆✨ WE WON BEST PROJECT AT BUNKASAI 2026! 🥇🇯🇵",
+    "award": "#1 Best Project",
+    "event": "Bunkasai 2026 — Japanese Cultural Festival (1st Edition)",
+    "venue": "Yashwantrao Chavan Kaladalan, Pune",
+    "batches": "Fushimi & Akagi",
+    "organization": "AtoJ Hirameki Japanese Language Classes",
+    "themes": [
+      {
+        "icon": "🎋",
+        "name": "Tanabata",
+        "description": "Hanging our wishes to the stars"
+      },
+      {
+        "icon": "🎎",
+        "name": "Daruma",
+        "description": "Setting goals and never giving up"
+      },
+      {
+        "icon": "🎴",
+        "name": "Omikuji",
+        "description": "Fortune slips, destiny, and good luck"
+      },
+      {
+        "icon": "🐉",
+        "name": "Juunishi",
+        "description": "The 12 zodiac signs and fortune telling"
+      }
+    ],
+    "fullSummary": "We are absolutely over the moon!! 🎉🎊 Bunkasai 2026 — a Japanese Cultural Festival held at Yashwantrao Chavan Kaladalan, Pune — and our team just brought home #1 Best Project on the very FIRST edition of this amazing event!! 🙌🔥 Our batches — Fushimi and Akagi — came together and built something truly special. Our booth celebrated 4 incredible Japanese cultural themes: 🎋 Tanabata — hanging our wishes to the stars, 🎎 Daruma — setting goals and never giving up, 🎴 Omikuji — fortune slips, destiny, and good luck, 🐉 Juunishi — the 12 zodiac signs and fortune telling. Every single person in both batches gave it everything — the creativity, the preparation, the energy, the passion. Watching visitors light up as they learned about each tradition made it all SO worth it! 😍 One of the most unforgettable highlights for me personally? I got to speak with a native Japanese speaker entirely in Japanese, explaining the history and traditions of Tanabata to him. The look on his face when I spoke — priceless!! 😄🗣️🇯🇵 And it wasn't just me — so many of our team members got to have real conversations with Japanese people throughout the event. Putting our learning into practice, live, in the moment — THAT is what this journey is all about!! 💪🔥 And honestly — the whole festival was INCREDIBLE. Kimono try-ons 👘, omikuji fortune booths, chopstick challenges 🥢, a Sapporo Snow Festival corner ❄️, 3D shrine models ⛩️… two days of pure Japanese culture magic! This win is for EVERY member of Fushimi and Akagi. Every late night, every decoration, every practice session — it all paid off. We couldn't be prouder of this team! 🌸🔥 Massive thank you to AtoJ Hirameki Japanese Language Classes, our amazing teachers, organizers, and volunteers! You made this dream possible 💙 チームワーク最高!! Best team ever!! 🚀🎌"
+  },
   "vocabulary": [
     {
       "id": 1,

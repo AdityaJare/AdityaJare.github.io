@@ -1,41 +1,307 @@
 [
   {
-    "id": "cert-placeholder-1",
-    "title": "[Add your certificate title, e.g. Deep Learning Specialization / Machine Learning]",
-    "issuer": "[Add issuing organization / platform, e.g. Coursera / DeepLearning.AI / Stanford Online]",
+    "id": "cert-dl-nn",
+    "title": "Neural Networks and Deep Learning",
+    "issuer": "DeepLearning.AI / Coursera (Instructor: Andrew Ng)",
     "category": "Deep Learning",
-    "issueDate": "[Add issue date, e.g. Month Year]",
+    "issueDate": "Verified Credential",
     "expiryDate": null,
-    "credentialId": "[Add Credential ID / Verification Code]",
+    "credentialId": "Coursera Share: 326c383fbebc9c078b62895950e486ae",
     "skillsCovered": [
       "Artificial Neural Networks (ANN)",
-      "Convolutional Neural Networks (CNN)",
-      "Transfer Learning",
-      "TensorFlow/Keras"
+      "Backpropagation & Vectorization",
+      "Activation Functions (ReLU, Sigmoid)",
+      "Deep L-Layer Neural Networks"
     ],
-    "image": "assets/images/cert-placeholder.svg",
-    "verificationUrl": "[Add Verify Credential link]",
-    "relatedProjectId": "age-gender-estimation",
-    "notes": "Include the ANN and CNN course completions when adding your official certificates."
+    "image": "assets/images/cert-deeplearning.svg",
+    "verificationUrl": "https://coursera.org/share/326c383fbebc9c078b62895950e486ae",
+    "relatedProjectId": "employee-attrition-ann",
+    "notes": "Course 1 of Deep Learning Specialization. Built vectorized L-layer deep neural networks from scratch in Python."
   },
   {
-    "id": "cert-placeholder-2",
-    "title": "[Add your Machine Learning / Data Science Certificate]",
-    "issuer": "[Add issuing organization]",
-    "category": "AI/ML",
-    "issueDate": "[Add issue date]",
+    "id": "cert-dl-tuning",
+    "title": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+    "issuer": "DeepLearning.AI / Coursera (Instructor: Andrew Ng)",
+    "category": "Deep Learning",
+    "issueDate": "Verified Credential",
     "expiryDate": null,
-    "credentialId": "[Add Credential ID]",
+    "credentialId": "Coursera Share: 427e8442ee8c82dc70e5c74a7e0c8da3",
     "skillsCovered": [
-      "Supervised Learning",
-      "Model Evaluation",
-      "Feature Engineering",
-      "scikit-learn"
+      "L2 & Dropout Regularization",
+      "Batch Normalization",
+      "Adam & RMSprop Optimization",
+      "Gradient Checking"
     ],
-    "image": "assets/images/cert-placeholder.svg",
-    "verificationUrl": "[Add Verify Credential link]",
+    "image": "assets/images/cert-deeplearning.svg",
+    "verificationUrl": "https://coursera.org/share/427e8442ee8c82dc70e5c74a7e0c8da3",
+    "relatedProjectId": "employee-attrition-ann",
+    "notes": "Course 2 of Deep Learning Specialization. Practical mastery of optimization algorithms and hyperparameter search."
+  },
+  {
+    "id": "cert-dl-structuring",
+    "title": "Structuring Machine Learning Projects",
+    "issuer": "DeepLearning.AI / Coursera (Instructor: Andrew Ng)",
+    "category": "Deep Learning",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 3781f550d9ebe72150242aaac3032b56",
+    "skillsCovered": [
+      "ML Diagnostic Strategy",
+      "Error Analysis & Prioritization",
+      "Train / Dev / Test Mismatch Diagnostics",
+      "Transfer & Multi-Task Learning"
+    ],
+    "image": "assets/images/cert-deeplearning.svg",
+    "verificationUrl": "https://coursera.org/share/3781f550d9ebe72150242aaac3032b56",
+    "relatedProjectId": "jury-ai",
+    "notes": "Course 3 of Deep Learning Specialization. Industry best practices for diagnosing and prioritizing ML pipeline improvements."
+  },
+  {
+    "id": "cert-dl-cnn",
+    "title": "Convolutional Neural Networks",
+    "issuer": "DeepLearning.AI / Coursera (Instructor: Andrew Ng)",
+    "category": "Deep Learning",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 18eeee6c171a13d5bd69826180cba514",
+    "skillsCovered": [
+      "Convolutional Networks (CNN)",
+      "Residual Networks (ResNet)",
+      "Object Detection & YOLO",
+      "Face Recognition & Neural Style Transfer"
+    ],
+    "image": "assets/images/cert-deeplearning.svg",
+    "verificationUrl": "https://coursera.org/share/18eeee6c171a13d5bd69826180cba514",
+    "relatedProjectId": "vehicle-type-cnn",
+    "notes": "Course 4 of Deep Learning Specialization. Core foundation for Computer Vision research and multi-stage feature extraction."
+  },
+  {
+    "id": "cert-ml-specialization",
+    "title": "Machine Learning Specialization",
+    "issuer": "Stanford Online & DeepLearning.AI / Coursera",
+    "category": "AI/ML",
+    "issueDate": "Verified Specialization",
+    "expiryDate": null,
+    "credentialId": "7FMBS1YVA6QD",
+    "skillsCovered": [
+      "Supervised & Unsupervised Learning",
+      "Tree Ensembles & XGBoost",
+      "Neural Networks & Deep Learning",
+      "Recommender Systems & Reinforcement Learning"
+    ],
+    "image": "assets/images/cert-stanford-ml.svg",
+    "verificationUrl": "https://www.coursera.org/account/accomplishments/specialization/7FMBS1YVA6QD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=s12n",
     "relatedProjectId": "strengthcast",
-    "notes": "[Add notes]"
+    "notes": "Comprehensive 3-course specialization by Stanford University and DeepLearning.AI taught by Andrew Ng."
+  },
+  {
+    "id": "cert-ml-supervised",
+    "title": "Supervised Machine Learning: Regression and Classification",
+    "issuer": "Stanford Online & DeepLearning.AI / Coursera",
+    "category": "AI/ML",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 26ec4ea2440cdc4364d8f5a68fb60c9c",
+    "skillsCovered": [
+      "Linear & Logistic Regression",
+      "Gradient Descent Optimization",
+      "Overfitting & Regularization",
+      "Feature Engineering"
+    ],
+    "image": "assets/images/cert-stanford-ml.svg",
+    "verificationUrl": "https://coursera.org/share/26ec4ea2440cdc4364d8f5a68fb60c9c",
+    "relatedProjectId": "crop-recommendation",
+    "notes": "Foundational supervised learning algorithms for regression and classification."
+  },
+  {
+    "id": "cert-ml-advanced",
+    "title": "Advanced Learning Algorithms",
+    "issuer": "Stanford Online & DeepLearning.AI / Coursera",
+    "category": "AI/ML",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 89361f05bda2544324909b94fad3fda2",
+    "skillsCovered": [
+      "Multi-Layer Neural Networks",
+      "Decision Trees & Random Forests",
+      "XGBoost Ensemble Modeling",
+      "Model Evaluation Metrics"
+    ],
+    "image": "assets/images/cert-stanford-ml.svg",
+    "verificationUrl": "https://coursera.org/share/89361f05bda2544324909b94fad3fda2",
+    "relatedProjectId": "strengthcast",
+    "notes": "Advanced algorithms covering decision tree ensembles, neural network training, and diagnostic evaluation."
+  },
+  {
+    "id": "cert-ml-unsupervised",
+    "title": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    "issuer": "Stanford Online & DeepLearning.AI / Coursera",
+    "category": "AI/ML",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: b660f38c55ccd5665a2f08e639c5ebe8",
+    "skillsCovered": [
+      "K-Means Clustering & PCA",
+      "Anomaly Detection",
+      "Collaborative Filtering",
+      "Deep Q-Learning (RL)"
+    ],
+    "image": "assets/images/cert-stanford-ml.svg",
+    "verificationUrl": "https://coursera.org/share/b660f38c55ccd5665a2f08e639c5ebe8",
+    "relatedProjectId": "bank-marketing-campaign",
+    "notes": "Unsupervised learning architectures, personalized recommender systems, and reinforcement learning."
+  },
+  {
+    "id": "cert-cloud-azure-vm",
+    "title": "Azure: Create a Virtual Machine and Deploy a Web Server",
+    "issuer": "Coursera Project Network / Microsoft Azure",
+    "category": "Cloud",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 34e7c7119399a18c7819958c5259bfaa",
+    "skillsCovered": [
+      "Microsoft Azure Portal",
+      "Linux Virtual Machine Provisioning",
+      "Nginx / Web Server Configuration",
+      "Network Security Rules (Inbound/Outbound)"
+    ],
+    "image": "assets/images/cert-azure.svg",
+    "verificationUrl": "https://coursera.org/share/34e7c7119399a18c7819958c5259bfaa",
+    "relatedProjectId": "jury-ai",
+    "notes": "Hands-on guided deployment of live cloud web servers and virtual network security infrastructure on Azure."
+  },
+  {
+    "id": "cert-cloud-azure-intro",
+    "title": "Introduction to Microsoft Azure Cloud Services",
+    "issuer": "Microsoft / Coursera",
+    "category": "Cloud",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "KG8FL6SSNA6U",
+    "skillsCovered": [
+      "Azure Compute & Storage Services",
+      "Cloud Architecture & High Availability",
+      "Identity, Access & Security (RBAC)",
+      "Cost Management & SLAs"
+    ],
+    "image": "assets/images/cert-azure.svg",
+    "verificationUrl": "https://www.coursera.org/account/accomplishments/verify/KG8FL6SSNA6U?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course",
+    "relatedProjectId": null,
+    "notes": "Official Microsoft credential covering foundational cloud concepts, compute, storage, and cloud governance."
+  },
+  {
+    "id": "cert-cloud-networking",
+    "title": "Introduction to Networking and Cloud Computing",
+    "issuer": "Coursera",
+    "category": "Cloud",
+    "issueDate": "Verified Coursework",
+    "expiryDate": null,
+    "credentialId": "Coursera Verified",
+    "skillsCovered": [
+      "TCP/IP & OSI Architecture",
+      "Routing, Switching & CIDR Subnets",
+      "Cloud Virtual Networks (VPC/VNet)",
+      "DNS, HTTPS & Cloud Security"
+    ],
+    "image": "assets/images/cert-azure.svg",
+    "verificationUrl": "https://www.coursera.org/learn/introduction-to-networking-and-cloud-computing?utm_source=link&utm_medium=page_share&utm_content=lih&utm_campaign=card_button",
+    "relatedProjectId": null,
+    "notes": "Essential computer networking and internet architecture principles underpinning modern cloud computing systems."
+  },
+  {
+    "id": "cert-linux-lfca-spec",
+    "title": "Learning Linux for LFCA Certification",
+    "issuer": "The Linux Foundation / Coursera",
+    "category": "Linux",
+    "issueDate": "Verified Specialization",
+    "expiryDate": null,
+    "credentialId": "LS4UFTUT3DTM",
+    "skillsCovered": [
+      "Linux System Administration",
+      "Storage, Filesystems & Partitions",
+      "System Security & Network Configuration",
+      "Cloud & DevOps Fundamentals"
+    ],
+    "image": "assets/images/cert-linux.svg",
+    "verificationUrl": "https://www.coursera.org/account/accomplishments/specialization/LS4UFTUT3DTM?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n",
+    "relatedProjectId": null,
+    "notes": "Comprehensive specialization by The Linux Foundation preparing for Linux Foundation Certified IT Associate (LFCA)."
+  },
+  {
+    "id": "cert-linux-fundamentals",
+    "title": "Linux Fundamentals",
+    "issuer": "The Linux Foundation / Coursera",
+    "category": "Linux",
+    "issueDate": "Verified Coursework",
+    "expiryDate": null,
+    "credentialId": "Coursera Verified",
+    "skillsCovered": [
+      "Linux Filesystem Hierarchy (FHS)",
+      "Bash Shell Command Navigation",
+      "File Permissions (chmod, chown)",
+      "Process Management & Redirection"
+    ],
+    "image": "assets/images/cert-linux.svg",
+    "verificationUrl": "https://www.coursera.org/learn/linux-fundamentals?utm_source=link&utm_medium=page_share&utm_content=lih&utm_campaign=card_button",
+    "relatedProjectId": null,
+    "notes": "Foundational Linux operating system concepts and command line mastery."
+  },
+  {
+    "id": "cert-linux-managing",
+    "title": "Managing Linux Systems",
+    "issuer": "The Linux Foundation / Coursera",
+    "category": "Linux",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 905b4b605c6582abfc429f53d95fbb1b",
+    "skillsCovered": [
+      "systemd Service Units & Daemons",
+      "User, Group & Quota Administration",
+      "Cron Job Scheduling",
+      "Disk Partitioning & Logical Volumes"
+    ],
+    "image": "assets/images/cert-linux.svg",
+    "verificationUrl": "https://coursera.org/share/905b4b605c6582abfc429f53d95fbb1b",
+    "relatedProjectId": null,
+    "notes": "Hands-on enterprise Linux systems administration and automated operations."
+  },
+  {
+    "id": "cert-linux-securing",
+    "title": "Securing Linux Systems",
+    "issuer": "The Linux Foundation / Coursera",
+    "category": "Linux",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 28e0a0cc4edcb9680bf32de659bab2e1",
+    "skillsCovered": [
+      "Linux Firewall Configuration (iptables/ufw)",
+      "SSH Key Pairs & Server Hardening",
+      "System Logging & Security Auditing",
+      "Access Control Lists & Vulnerability Management"
+    ],
+    "image": "assets/images/cert-linux.svg",
+    "verificationUrl": "https://coursera.org/share/28e0a0cc4edcb9680bf32de659bab2e1",
+    "relatedProjectId": null,
+    "notes": "Practical security hardening techniques for enterprise Linux environments."
+  },
+  {
+    "id": "cert-linux-devops",
+    "title": "Linux Cloud and DevOps",
+    "issuer": "The Linux Foundation / Coursera",
+    "category": "Linux",
+    "issueDate": "Verified Credential",
+    "expiryDate": null,
+    "credentialId": "Coursera Share: 45fe8107b73d136a840c07ce90a8bda2",
+    "skillsCovered": [
+      "Docker Containerization & Images",
+      "Git & Continuous Integration (CI/CD)",
+      "Virtualization & Hypervisors",
+      "Cloud Deployment & Infrastructure as Code"
+    ],
+    "image": "assets/images/cert-linux.svg",
+    "verificationUrl": "https://coursera.org/share/45fe8107b73d136a840c07ce90a8bda2",
+    "relatedProjectId": "jury-ai",
+    "notes": "Modern DevOps practices on Linux, Docker container workflows, and cloud-native deployment."
   },
   {
     "id": "nat-test-n4",

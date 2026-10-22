@@ -74,36 +74,40 @@
       .map((s) => `<span class="badge badge-tag">${escapeHtml(s)}</span>`)
       .join(' ');
 
-    const verifyBtn = (cert.verificationUrl && cert.verificationUrl !== '[Add Verify Credential link]')
-      ? `<a href="${escapeHtml(cert.verificationUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Verify Credential</a>`
-      : `<span class="badge badge-tag" title="Add your credential URL in certificates.json">[Verify: Add link]</span>`;
-
+    const verifyUrl = cert.verificationUrl || '#';
     const relatedProjectLink = (cert.relatedProjectId)
-      ? `<a href="projects.html" class="btn btn-secondary btn-sm" title="View associated research">Related Project</a>`
+      ? `<a href="projects.html" class="btn btn-secondary btn-sm" title="View associated research project">Related Project</a>`
       : '';
 
     return `
       <article class="card cert-card">
-        <div class="cert-badge-frame">
+        <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener noreferrer" class="cert-badge-frame" title="Click to verify ${escapeHtml(cert.title)}">
           <img src="${escapeHtml(cert.image || 'assets/images/cert-placeholder.svg')}" alt="Badge for ${escapeHtml(cert.title)}" loading="lazy" />
-        </div>
-        <div style="flex-grow: 1;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        </a>
+        <div style="flex-grow: 1; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 0.5rem; flex-wrap: wrap;">
             <span class="badge badge-progress">${escapeHtml(cert.category)}</span>
-            <span class="cert-date text-mono">${escapeHtml(cert.issueDate)}</span>
+            <span class="cert-date text-mono" style="margin-bottom: 0;">${escapeHtml(cert.issueDate)}</span>
           </div>
-          <h3 class="card-title" style="font-size: 1.15rem;">${escapeHtml(cert.title)}</h3>
+          <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.35rem;">
+            <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+              ${escapeHtml(cert.title)}
+            </a>
+          </h3>
           <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 0.75rem;">
-            ID: ${escapeHtml(cert.credentialId)}
+          <p style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 0.75rem; word-break: break-all;">
+            ${cert.credentialId ? `ID: ${escapeHtml(cert.credentialId)}` : 'Verified Credential'}
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem;">
             ${skillsHTML}
           </div>
-          ${cert.notes ? `<p style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">Note: ${escapeHtml(cert.notes)}</p>` : ''}
+          ${cert.notes ? `<p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">${escapeHtml(cert.notes)}</p>` : ''}
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); flex-wrap: wrap;">
-          ${verifyBtn}
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; margin-top: auto;">
+          <a href="${escapeHtml(verifyUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Verify Credential
+          </a>
           ${relatedProjectLink}
         </div>
       </article>
