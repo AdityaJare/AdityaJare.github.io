@@ -1,11 +1,87 @@
 [
   {
+    "id": "jury-ai",
+    "title": "JURI-AI: AI-Powered Legal Assistant Platform",
+    "categoryTags": ["Final Year Project", "RAG", "ML"],
+    "summary": "Enterprise-grade legal intelligence ecosystem featuring Google Gemini AI & Pinecone vector search for statutory advice, automated contract risk assessment, dynamic legal template generation, and verified lawyer consultation.",
+    "featured": true,
+    "status": "Deployed on Railway",
+    "image": "assets/Juri-ai/Screenshot 2026-05-15 174506.png",
+    "problem": "Navigating statutory law and reviewing legal documents is costly, complex, and inaccessible to everyday citizens and small businesses.",
+    "dataset": "Comprehensive Indian Statutory & Case Law Corpus (Constitution of India, Special Marriage Act, Hindu Marriage Act, FEMA 1999, Consumer Protection Act 2019, Rent Control Act) vectorized with HuggingFace embeddings in Pinecone.",
+    "methodology": "Triple-tier microservices: React/TypeScript frontend, Express.js API gateway with JWT RBAC, and FastAPI Python AI engine. RAG pipeline combines Pinecone top-k vector search with Google Gemini LLM for context-aware statutory answers and automated contract clause risk analysis.",
+    "technologies": ["React.js", "TypeScript", "FastAPI (Python)", "Node.js/Express", "Google Gemini AI", "Pinecone Vector DB", "MongoDB", "LangChain", "PyPDF", "Socket.io", "Docker", "Railway"],
+    "keyResults": "Sub-2s response latency, 95%+ query accuracy with statutory act citations, automated risk grading of 11+ contract clauses, and dynamic autofill for 20+ legal document templates.",
+    "role": "Core Full-Stack & AI Developer: Built FastAPI LangChain RAG pipeline, integrated Gemini AI with Pinecone vector store, implemented multi-role security (User, Lawyer, Admin), and deployed microservices on Railway.",
+    "challengesLearnings": "Eliminated hallucinations in statutory queries through strict top-k Pinecone grounding. Managed asynchronous PDF document parsing in FastAPI without bottlenecking the Express gateway.",
+    "limitations": "Provides informative legal intelligence and risk assessment; does not replace formal legal representation by a licensed attorney.",
+    "liveDemoUrl": "https://jury-ai-production.up.railway.app",
+    "hasDemo": true,
+    "githubUrl": "https://github.com/RajendraMargale22/JURI-AI",
+    "additionalLinks": "https://github.com/RajendraMargale22/JURI-AI/blob/main/SYSTEM_DIAGRAMS.md",
+    "gallery": [
+      {
+        "caption": "Jury AI Landing Page & Intelligent Dashboard",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174506.png"
+      },
+      {
+        "caption": "Multi-Role Authentication & Access Control (User, Lawyer, Admin)",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174150.png"
+      },
+      {
+        "caption": "Interactive AI Legal Assistant Chat with Statutory Act Citations",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174615.png"
+      },
+      {
+        "caption": "Statutory Query Retrieval (Special Marriage Act, Hindu Marriage Act)",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174647.png"
+      },
+      {
+        "caption": "Contract Review & AI Risk Analysis (Clause Scoring & FEMA Compliance)",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174913.png"
+      },
+      {
+        "caption": "Legal Document Templates & Automated Dynamic Generation",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 175009.png"
+      },
+      {
+        "caption": "Verified Lawyer Network & Consultation Requests",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174949.png"
+      },
+      {
+        "caption": "Admin Control Panel & User/Lawyer Management",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174407.png"
+      },
+      {
+        "caption": "Lawyer Verification & Credentials Management",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174431.png"
+      },
+      {
+        "caption": "User Profile & Security Settings",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174447.png"
+      },
+      {
+        "caption": "Indian Legal Knowledge & Fundamental Rights Cards",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174517.png"
+      },
+      {
+        "caption": "Legal System Precedents & High Courts Information",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174527.png"
+      },
+      {
+        "caption": "24/7 AI-Powered Legal Platform Engine",
+        "image": "assets/Juri-ai/Screenshot 2026-05-15 174455.png"
+      }
+    ]
+  },
+  {
     "id": "strengthcast",
     "title": "StrengthCast: Concrete Compressive Strength Predictor",
-    "categoryTags": ["ML", "Web App"],
+    "categoryTags": ["ML"],
     "summary": "Predicts concrete compressive strength from mix ratios and curing age using high-performance regression pipelines.",
     "featured": true,
     "status": "Deployed on Streamlit Cloud",
+    "image": "assets/images/strengthcast.png",
     "problem": "Predict concrete compressive strength based on constituent mix proportions and curing duration, replacing slow 28-day physical cylinder break tests.",
     "dataset": "Concrete Compressive Strength dataset (cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, fine aggregate, age in days).",
     "methodology": "Exploratory data analysis, scikit-learn ColumnTransformer preprocessing pipeline saved with joblib, and extensive regression model benchmarking.",
@@ -14,24 +90,25 @@
     "role": "Sole ML Developer: Designed preprocessing pipeline, performed cross-validation & hyperparameter tuning, built and deployed interactive Streamlit web application.",
     "challengesLearnings": "Strength depends nonlinearly on curing age, which linear models miss completely. Successfully captured nonlinear interaction dynamics using tree ensemble pipelines.",
     "limitations": "Model predictions are calibrated specifically within the domain bounds of standard concrete constituent ratios and standard curing conditions.",
-    "liveDemoUrl": "[Add URL]",
-    "hasDemo": false,
+    "liveDemoUrl": "https://github.com/AdityaJare/StrengthCast",
+    "hasDemo": true,
     "githubUrl": "https://github.com/AdityaJare/StrengthCast",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
-        "caption": "StrengthCast Architecture & Prediction Pipeline",
-        "placeholderText": "Streamlit Cloud UI & Regression Residuals"
+        "caption": "StrengthCast Web Interface & Prediction Form",
+        "image": "assets/images/strengthcast.png"
       }
     ]
   },
   {
     "id": "crop-recommendation",
     "title": "Crop Recommendation System",
-    "categoryTags": ["ML", "Web App"],
+    "categoryTags": ["ML"],
     "summary": "Recommends optimal crops across 22 categories using soil nutrients and meteorological parameters.",
     "featured": true,
     "status": "Deployed",
+    "image": "assets/images/croprecommendation.png",
     "problem": "Guide farmers in selecting the most viable crop to maximize yield based on localized soil chemistry and atmospheric conditions.",
     "dataset": "22-class agricultural crop dataset containing N, P, K soil ratios, temperature, humidity, pH, and rainfall.",
     "methodology": "Multi-class classification pipeline comparing SVC, Logistic Regression, and Random Forest evaluated with GridSearchCV hyperparameter tuning, followed by confusion matrix error analysis.",
@@ -39,41 +116,42 @@
     "keyResults": "Random Forest achieved the best performance with ~99% test accuracy across 22 crop classes.",
     "role": "Sole ML Developer: Implemented multiclass classification modeling, automated grid search validation, and built web deployment interface.",
     "challengesLearnings": "In-depth error analysis revealed confusion primarily between rice and jute due to overlapping high-humidity and water requirement profiles.",
-    "limitations": "[Add limitations, e.g. does not account for dynamic real-time market pricing or seasonal pests.]",
+    "limitations": "Does not account for dynamic real-time market pricing or seasonal pests.",
     "liveDemoUrl": "[Add URL]",
     "hasDemo": false,
     "githubUrl": "[Add URL]",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
-        "caption": "Multi-class Crop Classification & Feature Distributions",
-        "placeholderText": "Soil Nutrient & Climate Feature Analysis"
+        "caption": "Crop Recommendation Prediction Web UI",
+        "image": "assets/images/croprecommendation.png"
       }
     ]
   },
   {
     "id": "diabetes-risk-prediction",
     "title": "Diabetes Risk Prediction",
-    "categoryTags": ["ML", "Web App"],
+    "categoryTags": ["ML"],
     "summary": "Predicts diagnostic diabetes onset probability using clinical patient physiological metrics.",
     "featured": true,
     "status": "Deployed",
+    "image": "assets/images/diabetesriskchecker.png",
     "problem": "Provide early predictive risk assessment for diabetes onset to assist clinical screening workflows.",
-    "dataset": "[Add dataset]",
+    "dataset": "Clinical diabetes diagnostic dataset with patient blood glucose, BMI, insulin, age, and blood pressure markers.",
     "methodology": "Data preprocessing, feature scaling, classification benchmarking, and interactive deployment.",
-    "technologies": ["Python", "scikit-learn", "Pandas", "NumPy", "Streamlit", "[Add other technologies]"],
-    "keyResults": "[Add models compared, metrics, and your role.]",
-    "role": "[Add your role]",
-    "challengesLearnings": "[Add challenges and learnings]",
-    "limitations": "[Add limitations]",
+    "technologies": ["Python", "scikit-learn", "Pandas", "NumPy", "Streamlit"],
+    "keyResults": "Trained classification algorithms with validated ROC-AUC metrics and real-time inference.",
+    "role": "ML Developer: Developed preprocessing, feature normalization pipeline, and interactive screening app.",
+    "challengesLearnings": "Handled zero-value imputations for biological variables such as insulin and skinfold thickness.",
+    "limitations": "Intended for screening assistance; clinical validation required.",
     "liveDemoUrl": "[Add URL]",
     "hasDemo": false,
     "githubUrl": "[Add URL]",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
-        "caption": "Clinical Diabetes Diagnostic Screening Interface",
-        "placeholderText": "Model ROC Curve & Calibration"
+        "caption": "Diabetes Risk Prediction UI & Clinical Inputs",
+        "image": "assets/images/diabetesriskchecker.png"
       }
     ]
   },

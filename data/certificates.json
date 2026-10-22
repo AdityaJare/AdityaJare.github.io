@@ -38,22 +38,22 @@
     "notes": "[Add notes]"
   },
   {
-    "id": "cert-placeholder-3",
-    "title": "[Add your Japanese Language Proficiency Certificate, e.g. JLPT N4 / N3 Target]",
-    "issuer": "[Add issuer, e.g. Japan Foundation / JEES]",
+    "id": "nat-test-n4",
+    "title": "Japanese Language NAT-TEST (Level 4Q / N4 Equivalent)",
+    "issuer": "Japanese Language NAT-TEST Steering Committee (Senmon Kyouiku Publishing Co., Ltd.)",
     "category": "Japanese",
-    "issueDate": "[Add issue date or scheduled December exam]",
+    "issueDate": "April 15, 2026",
     "expiryDate": null,
-    "credentialId": "[Add Credential ID]",
+    "credentialId": "26040048340015",
     "skillsCovered": [
-      "JLPT N3 Grammar",
-      "Kanji & Vocabulary",
-      "Reading Comprehension",
-      "Technical Japanese"
+      "Language Knowledge (Kanji, Vocab, Grammar): 71/120",
+      "Listening Comprehension: 40/60",
+      "Total Score: 111/180 (Pass Result)",
+      "Targeting JLPT N3 in December"
     ],
-    "image": "assets/images/cert-placeholder.svg",
-    "verificationUrl": "[Add Verify Credential link]",
+    "image": "assets/images/NAT-N4.png",
+    "verificationUrl": "assets/images/NAT-N4.png",
     "relatedProjectId": null,
-    "notes": "Targeting JLPT N3 December Exam."
+    "notes": "Official Score Report for Aditya Shivdatta Jare. Passed 4Q (N4 equivalent) test conducted April 2026. Actively preparing for JLPT N3."
   }
 ]

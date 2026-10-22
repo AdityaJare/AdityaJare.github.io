@@ -64,15 +64,166 @@
           </p>
         </div>
 
-        <!-- Filter Buttons: All, ML, ANN, CNN, RNN, RAG, Web Apps -->
+        <!-- Flagship Final Year Project Showcase with Auto Slider -->
+        <article class="fyp-showcase-card" id="final-year-project" aria-labelledby="fyp-title">
+          <div class="fyp-header">
+            <div class="fyp-header-top">
+              <span class="badge badge-capstone">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                Final Year Project &bull; B.E. Capstone
+              </span>
+              <span class="badge badge-deployed">Deployed on Railway</span>
+            </div>
+            <h2 id="fyp-title" class="fyp-main-title">JURI-AI: AI-Powered Legal Assistant Platform</h2>
+            <p class="fyp-main-subtitle">
+              A comprehensive AI-driven legal intelligence platform built with React, Node.js/Express, FastAPI, and MongoDB. Powered by Google Gemini AI and Pinecone vector search to deliver instant statutory advice, automated contract risk analysis, and dynamic document generation.
+            </p>
+          </div>
+
+          <!-- Auto Slider Carousel (13 Real Screenshots) -->
+          <div class="fyp-slider-wrapper" id="fyp-slider" role="region" aria-label="Jury AI Project Screenshots Auto Slider" tabindex="0">
+            <div class="fyp-slides-track" id="fyp-slides-track">
+              <!-- Rendered dynamically by js/projects.js from FYP_SLIDES -->
+            </div>
+
+            <!-- Slider Controls -->
+            <button type="button" class="fyp-slider-btn prev" id="fyp-prev-btn" aria-label="Previous screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="fyp-slider-btn next" id="fyp-next-btn" aria-label="Next screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <!-- Slide Counter -->
+            <div class="fyp-slide-counter" id="fyp-slide-counter">01 / 13</div>
+
+            <!-- Dots Indicator -->
+            <div class="fyp-slider-dots" id="fyp-slider-dots" role="tablist" aria-label="Slide dots">
+              <!-- Rendered by js/projects.js -->
+            </div>
+          </div>
+
+          <!-- Down Below: Clean, Non-Boring Project Info Grid -->
+          <div class="fyp-info-grid">
+            <!-- 1. Core AI Capabilities -->
+            <div class="fyp-info-card">
+              <div class="fyp-card-header">
+                <span class="fyp-icon-pill">🤖</span>
+                <h3 class="fyp-card-title">Core AI Capabilities</h3>
+              </div>
+              <ul class="fyp-features-list">
+                <li>
+                  <strong>Statutory AI Assistant:</strong> Context-grounded natural language queries powered by <em>Google Gemini AI</em> &amp; <em>Pinecone Vector DB</em> with statutory law citations.
+                </li>
+                <li>
+                  <strong>Contract Risk Analysis:</strong> Automated clause-by-clause grading (High/Medium/Low risk), FEMA 1999 &amp; consumer act compliance, and legal safety alerts.
+                </li>
+                <li>
+                  <strong>Smart Template System:</strong> Pre-built legal contracts with dynamic autofill, category filters, and instant downloads.
+                </li>
+                <li>
+                  <strong>Multi-Role RBAC:</strong> Dedicated portals with role-based access for Users, verified Lawyers (consultation chat), and Admins.
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2. Microservices Architecture -->
+            <div class="fyp-info-card">
+              <div class="fyp-card-header">
+                <span class="fyp-icon-pill">🏗️</span>
+                <h3 class="fyp-card-title">System Architecture</h3>
+              </div>
+              <div class="fyp-tech-stack-groups">
+                <div class="fyp-tech-group">
+                  <span class="fyp-tech-label">Client Layer:</span>
+                  <div class="fyp-pill-wrap">
+                    <span class="badge badge-tag">React.js</span>
+                    <span class="badge badge-tag">TypeScript</span>
+                    <span class="badge badge-tag">Context API</span>
+                    <span class="badge badge-tag">Axios</span>
+                  </div>
+                </div>
+                <div class="fyp-tech-group">
+                  <span class="fyp-tech-label">API Gateway:</span>
+                  <div class="fyp-pill-wrap">
+                    <span class="badge badge-tag">Node.js</span>
+                    <span class="badge badge-tag">Express.js</span>
+                    <span class="badge badge-tag">JWT Auth</span>
+                    <span class="badge badge-tag">Socket.io</span>
+                  </div>
+                </div>
+                <div class="fyp-tech-group">
+                  <span class="fyp-tech-label">AI Microservice:</span>
+                  <div class="fyp-pill-wrap">
+                    <span class="badge badge-tag">FastAPI (Python)</span>
+                    <span class="badge badge-tag">Google Gemini</span>
+                    <span class="badge badge-tag">Pinecone Vector DB</span>
+                    <span class="badge badge-tag">LangChain</span>
+                  </div>
+                </div>
+                <div class="fyp-tech-group">
+                  <span class="fyp-tech-label">Database &amp; Cloud:</span>
+                  <div class="fyp-pill-wrap">
+                    <span class="badge badge-tag">MongoDB</span>
+                    <span class="badge badge-tag">Docker</span>
+                    <span class="badge badge-tag">Railway Cloud</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Performance & Actions -->
+            <div class="fyp-info-card">
+              <div class="fyp-card-header">
+                <span class="fyp-icon-pill">⚡</span>
+                <h3 class="fyp-card-title">Performance &amp; Links</h3>
+              </div>
+              <div class="fyp-metrics-row">
+                <div class="fyp-metric-stat">
+                  <span class="fyp-metric-value">&lt; 2s</span>
+                  <span class="fyp-metric-desc">Response Time</span>
+                </div>
+                <div class="fyp-metric-stat">
+                  <span class="fyp-metric-value">95%+</span>
+                  <span class="fyp-metric-desc">Statutory Match</span>
+                </div>
+                <div class="fyp-metric-stat">
+                  <span class="fyp-metric-value">20+</span>
+                  <span class="fyp-metric-desc">Smart Templates</span>
+                </div>
+              </div>
+
+              <div class="fyp-security-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Enterprise Security: JWT HTTP-only cookies, bcrypt hashing, Helmet headers &amp; pre-commit secret scanning.</span>
+              </div>
+
+              <div class="fyp-actions-bar">
+                <a href="https://jury-ai-production.up.railway.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live App
+                </a>
+                <a href="https://github.com/RajendraMargale22/JURI-AI" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm view-details-trigger" data-project-id="jury-ai">
+                  Full Details &amp; Spec
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Filter Buttons: All, Final Year Project, ML, ANN, CNN, RNN, RAG -->
         <div class="filter-bar" role="toolbar" aria-label="Project category filters">
           <button type="button" class="filter-btn active" data-filter="All">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="Final Year Project">Final Year Project</button>
           <button type="button" class="filter-btn" data-filter="ML">Machine Learning (ML)</button>
           <button type="button" class="filter-btn" data-filter="ANN">Neural Networks (ANN)</button>
           <button type="button" class="filter-btn" data-filter="CNN">Computer Vision (CNN)</button>
           <button type="button" class="filter-btn" data-filter="RNN">Recurrent Nets (RNN)</button>
           <button type="button" class="filter-btn" data-filter="RAG">GenAI &amp; RAG</button>
-          <button type="button" class="filter-btn" data-filter="Web App">Web Apps</button>
         </div>
 
         <!-- Projects Grid Container -->

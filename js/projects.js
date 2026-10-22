@@ -1,6 +1,7 @@
 /**
  * Aditya Jare Portfolio - Projects Engine (projects.js)
- * Loads projects.json, handles filtering, 'Coming soon' states for RNN/RAG,
+ * Loads projects.json, handles filtering, FYP auto-slider showcase,
+ * project card thumbnails, real gallery images in modals,
  * demo button states, and rich interactive modal detail views.
  */
 
@@ -10,6 +11,13 @@
   let allProjects = [];
   let currentFilter = 'All';
   let lastFocusedElement = null;
+
+  // =========================================================================
+  // FYP Auto-Slider State
+  // =========================================================================
+  let fypSliderInterval = null;
+  let fypCurrentSlide = 0;
+  const FYP_SLIDE_INTERVAL_MS = 3500;
 
   async function loadProjects() {
     try {
@@ -32,7 +40,16 @@
         renderFilteredProjects(allProjectsContainer, currentFilter);
       }
 
+      // Initialize FYP Slider (only exists on projects.html)
+      initFYPSlider();
+
       initProjectModal();
+
+      // Bind detail triggers inside the FYP showcase card too
+      const fypShowcase = document.getElementById('final-year-project');
+      if (fypShowcase) {
+        bindCardEvents(fypShowcase);
+      }
     } catch (error) {
       console.error('Error loading projects data:', error);
       showErrorMessage();
@@ -56,14 +73,179 @@
     });
   }
 
-  // --- Render Featured Projects (Home Page: 1, 2, 3, 4, 8, 9) ---
+  // =========================================================================
+  // FYP AUTO-SLIDER ENGINE
+  // =========================================================================
+  function initFYPSlider() {
+    const track = document.getElementById('fyp-slides-track');
+    const dotsContainer = document.getElementById('fyp-slider-dots');
+    const counter = document.getElementById('fyp-slide-counter');
+    const prevBtn = document.getElementById('fyp-prev-btn');
+    const nextBtn = document.getElementById('fyp-next-btn');
+    const sliderWrapper = document.getElementById('fyp-slider');
+
+    if (!track || !dotsContainer) return;
+
+    // Get gallery from the jury-ai project
+    const juryAiProject = allProjects.find((p) => p.id === 'jury-ai');
+    if (!juryAiProject || !juryAiProject.gallery || juryAiProject.gallery.length === 0) return;
+
+    const slides = juryAiProject.gallery;
+
+    // Render slides
+    track.innerHTML = slides.map((slide, idx) => `
+      <div class="fyp-slide${idx === 0 ? ' active' : ''}" data-slide-index="${idx}">
+        <img src="${slide.image}" alt="${escapeHtml(slide.caption)}" class="fyp-slide-img" loading="${idx === 0 ? 'eager' : 'lazy'}" />
+        <div class="fyp-slide-caption">
+          <p class="fyp-slide-title">${escapeHtml(slide.caption)}</p>
+        </div>
+      </div>
+    `).join('');
+
+    // Render dots
+    dotsContainer.innerHTML = slides.map((_, idx) => `
+      <button type="button" class="fyp-dot${idx === 0 ? ' active' : ''}" data-dot-index="${idx}" aria-label="Go to slide ${idx + 1}" role="tab" aria-selected="${idx === 0}"></button>
+    `).join('');
+
+    // Update counter
+    function updateCounter() {
+      if (counter) {
+        const current = String(fypCurrentSlide + 1).padStart(2, '0');
+        const total = String(slides.length).padStart(2, '0');
+        counter.textContent = `${current} / ${total}`;
+      }
+    }
+
+    // Go to a specific slide
+    function goToSlide(index) {
+      const allSlides = track.querySelectorAll('.fyp-slide');
+      const allDots = dotsContainer.querySelectorAll('.fyp-dot');
+
+      allSlides.forEach((s) => s.classList.remove('active'));
+      allDots.forEach((d) => { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+
+      fypCurrentSlide = ((index % slides.length) + slides.length) % slides.length;
+      allSlides[fypCurrentSlide].classList.add('active');
+      allDots[fypCurrentSlide].classList.add('active');
+      allDots[fypCurrentSlide].setAttribute('aria-selected', 'true');
+      updateCounter();
+    }
+
+    // Auto advance
+    function startAutoSlide() {
+      stopAutoSlide();
+      fypSliderInterval = setInterval(() => {
+        goToSlide(fypCurrentSlide + 1);
+      }, FYP_SLIDE_INTERVAL_MS);
+    }
+
+    function stopAutoSlide() {
+      if (fypSliderInterval) {
+        clearInterval(fypSliderInterval);
+        fypSliderInterval = null;
+      }
+    }
+
+    // Controls
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToSlide(fypCurrentSlide - 1);
+        startAutoSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToSlide(fypCurrentSlide + 1);
+        startAutoSlide();
+      });
+    }
+
+    // Dot clicks
+    dotsContainer.querySelectorAll('.fyp-dot').forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-dot-index'), 10);
+        goToSlide(idx);
+        startAutoSlide();
+      });
+    });
+
+    // Pause on hover / focus
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('mouseenter', stopAutoSlide);
+      sliderWrapper.addEventListener('mouseleave', startAutoSlide);
+      sliderWrapper.addEventListener('focusin', stopAutoSlide);
+      sliderWrapper.addEventListener('focusout', startAutoSlide);
+    }
+
+    // Keyboard navigation
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goToSlide(fypCurrentSlide - 1);
+          startAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goToSlide(fypCurrentSlide + 1);
+          startAutoSlide();
+        }
+      });
+    }
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+      }, { passive: true });
+
+      sliderWrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            goToSlide(fypCurrentSlide + 1);
+          } else {
+            goToSlide(fypCurrentSlide - 1);
+          }
+        }
+        startAutoSlide();
+      }, { passive: true });
+    }
+
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!prefersReducedMotion.matches) {
+      startAutoSlide();
+    }
+
+    prefersReducedMotion.addEventListener('change', (e) => {
+      if (e.matches) {
+        stopAutoSlide();
+      } else {
+        startAutoSlide();
+      }
+    });
+
+    updateCounter();
+  }
+
+  // =========================================================================
+  // RENDER FEATURED PROJECTS (Home Page)
+  // =========================================================================
   function renderFeaturedProjects(container) {
     const featuredProjects = allProjects.filter((p) => p.featured === true);
     container.innerHTML = featuredProjects.map((p) => createProjectCardHTML(p)).join('');
     bindCardEvents(container);
   }
 
-  // --- Filter Bar Setup (Projects Page) ---
+  // =========================================================================
+  // FILTER BAR SETUP (Projects Page)
+  // =========================================================================
   function initProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const container = document.getElementById('all-projects-grid');
@@ -78,10 +260,12 @@
     });
   }
 
-  // --- Render Filtered Projects ---
+  // =========================================================================
+  // RENDER FILTERED PROJECTS
+  // =========================================================================
   function renderFilteredProjects(container, filter) {
-    // Handle RNN & RAG Coming Soon explicitly
-    if (filter === 'RNN' || filter === 'RAG') {
+    // Handle RNN Coming Soon
+    if (filter === 'RNN') {
       container.innerHTML = `
         <div class="empty-state-card">
           <div class="empty-state-icon">
@@ -90,9 +274,9 @@
             </svg>
           </div>
           <span class="badge badge-progress" style="margin-bottom: 0.75rem;">Under Active Development</span>
-          <h3 style="margin-bottom: 0.5rem;">${filter} Project Coming Soon</h3>
+          <h3 style="margin-bottom: 0.5rem;">RNN Project Coming Soon</h3>
           <p style="max-width: 480px; margin: 0 auto 1.5rem; font-size: 0.92rem; color: var(--text-secondary);">
-            Aditya is currently researching and implementing novel architectures in ${filter === 'RNN' ? 'Recurrent Neural Networks / sequential vision models' : 'Generative AI and Retrieval-Augmented Generation (LangChain, Vector DBs)'}. Check back soon or visit GitHub for work in progress.
+            Aditya is currently researching and implementing novel architectures in Recurrent Neural Networks / sequential vision models. Check back soon or visit GitHub for work in progress.
           </p>
           <a href="https://github.com/AdityaJare" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
             Check GitHub Commits
@@ -123,7 +307,9 @@
     bindCardEvents(container);
   }
 
-  // --- Card HTML Generator ---
+  // =========================================================================
+  // CARD HTML GENERATOR (with thumbnail images)
+  // =========================================================================
   function createProjectCardHTML(project) {
     const statusClass = project.status.toLowerCase().includes('deployed')
       ? 'badge-deployed'
@@ -131,7 +317,18 @@
       ? 'badge-progress'
       : 'badge-notebook';
 
-    // Live Demo Button logic: Hide when hasDemo is false, show "Demo coming soon" label
+    // Thumbnail image from project.image or first gallery item
+    let thumbHTML = '';
+    const thumbSrc = project.image || (project.gallery && project.gallery.length > 0 && project.gallery[0].image ? project.gallery[0].image : null);
+    if (thumbSrc) {
+      thumbHTML = `
+        <div class="project-card-thumb-wrap">
+          <img src="${escapeHtml(thumbSrc)}" alt="${escapeHtml(project.title)} screenshot" class="project-card-thumb-img" loading="lazy" />
+        </div>
+      `;
+    }
+
+    // Live Demo Button logic
     let demoBtnHTML = '';
     if (project.hasDemo && project.liveDemoUrl && project.liveDemoUrl !== '[Add URL]') {
       demoBtnHTML = `
@@ -161,12 +358,16 @@
       `;
 
     const tagsHTML = (project.categoryTags || [])
-      .map((tag) => `<span class="badge badge-tag">${escapeHtml(tag)}</span>`)
+      .map((tag) => {
+        const badgeClass = tag === 'Final Year Project' ? 'badge badge-capstone' : 'badge badge-tag';
+        return `<span class="${badgeClass}">${escapeHtml(tag)}</span>`;
+      })
       .join('');
 
     return `
       <article class="card project-card" data-project-id="${escapeHtml(project.id)}">
         <div>
+          ${thumbHTML}
           <div class="project-meta-top">
             <span class="badge ${statusClass}">${escapeHtml(project.status)}</span>
             <button type="button" class="btn btn-outline btn-sm view-details-trigger" data-project-id="${escapeHtml(project.id)}" aria-label="View detailed study for ${escapeHtml(project.title)}">
@@ -199,7 +400,9 @@
     });
   }
 
-  // --- Modal Engine ---
+  // =========================================================================
+  // MODAL ENGINE
+  // =========================================================================
   function initProjectModal() {
     let modalOverlay = document.getElementById('project-detail-modal');
     if (!modalOverlay) {
@@ -281,15 +484,49 @@
       .map((tech) => `<span class="badge badge-tag" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25); color: var(--accent-cyan);">${escapeHtml(tech)}</span>`)
       .join(' ');
 
-    const galleryContent = (project.gallery && project.gallery.length > 0)
-      ? project.gallery.map((g) => `
+    // Build gallery content - show real images if available, otherwise show placeholder
+    let galleryContent = '';
+    if (project.gallery && project.gallery.length > 0) {
+      const hasRealImages = project.gallery.some((g) => g.image);
+      if (hasRealImages) {
+        // Show first 3 images with real screenshots
+        const galleryItems = project.gallery.slice(0, 4).map((g) => {
+          if (g.image) {
+            return `
+              <div class="modal-gallery-item">
+                <img src="${escapeHtml(g.image)}" alt="${escapeHtml(g.caption)}" class="modal-gallery-img" loading="lazy" />
+                <p class="modal-gallery-caption">${escapeHtml(g.caption)}</p>
+              </div>
+            `;
+          }
+          return `
+            <div class="modal-gallery-box">
+              <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">${escapeHtml(g.caption)}</p>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(g.placeholderText || '[Add screenshot]')}</p>
+            </div>
+          `;
+        }).join('');
+
+        // If there are more images, show a count note
+        const remaining = project.gallery.length - 4;
+        const moreNote = remaining > 0
+          ? `<p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">+ ${remaining} more screenshot${remaining > 1 ? 's' : ''} in project showcase</p>`
+          : '';
+
+        galleryContent = galleryItems + moreNote;
+      } else {
+        // Fallback to placeholder style
+        galleryContent = project.gallery.map((g) => `
           <div class="modal-gallery-box">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 0.75rem; color: var(--text-accent);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             <p style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">${escapeHtml(g.caption)}</p>
             <p style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(g.placeholderText || '[Add your architecture diagram / chart screenshot]')}</p>
           </div>
-        `).join('')
-      : '<p style="color: var(--text-muted); font-size: 0.88rem;">[Add screenshot / architecture gallery]</p>';
+        `).join('');
+      }
+    } else {
+      galleryContent = '<p style="color: var(--text-muted); font-size: 0.88rem;">[Add screenshot / architecture gallery]</p>';
+    }
 
     bodyContainer.innerHTML = `
       <div class="modal-section">
