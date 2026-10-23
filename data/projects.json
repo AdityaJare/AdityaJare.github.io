@@ -2,17 +2,34 @@
   {
     "id": "jury-ai",
     "title": "JURI-AI: AI-Powered Legal Assistant Platform",
-    "categoryTags": ["Final Year Project", "RAG", "ML"],
-    "summary": "Enterprise-grade legal intelligence ecosystem featuring Google Gemini AI & Pinecone vector search for statutory advice, automated contract risk assessment, dynamic legal template generation, and verified lawyer consultation.",
+    "categoryTags": [
+      "Final Year Project",
+      "RAG",
+      "ML"
+    ],
+    "summary": "Enterprise-grade legal intelligence ecosystem featuring Google Gemini AI & Pinecone vector search for statutory advice, automated contract risk assessment, legal template Gallery, and verified lawyer consultation.",
     "featured": true,
     "status": "Deployed on Railway",
     "image": "assets/Juri-ai/juri-01-landing-page.png",
     "problem": "Navigating statutory law and reviewing legal documents is costly, complex, and inaccessible to everyday citizens and small businesses.",
     "dataset": "Comprehensive Indian Statutory & Case Law Corpus (Constitution of India, Special Marriage Act, Hindu Marriage Act, FEMA 1999, Consumer Protection Act 2019, Rent Control Act) vectorized with HuggingFace embeddings in Pinecone.",
     "methodology": "Triple-tier microservices: React/TypeScript frontend, Express.js API gateway with JWT RBAC, and FastAPI Python AI engine. RAG pipeline combines Pinecone top-k vector search with Google Gemini LLM for context-aware statutory answers and automated contract clause risk analysis.",
-    "technologies": ["React.js", "TypeScript", "FastAPI (Python)", "Node.js/Express", "Google Gemini AI", "Pinecone Vector DB", "MongoDB", "LangChain", "PyPDF", "Socket.io", "Docker", "Railway"],
+    "technologies": [
+      "React.js",
+      "TypeScript",
+      "FastAPI (Python)",
+      "Node.js/Express",
+      "Google Gemini AI",
+      "Pinecone Vector DB",
+      "MongoDB",
+      "LangChain",
+      "PyPDF",
+      "Socket.io",
+      "Docker",
+      "Railway"
+    ],
     "keyResults": "Sub-2s response latency, 95%+ query accuracy with statutory act citations, automated risk grading of 11+ contract clauses, and dynamic autofill for 20+ legal document templates.",
-    "role": "Core Full-Stack & AI Developer: Built FastAPI LangChain RAG pipeline, integrated Gemini AI with Pinecone vector store, implemented multi-role security (User, Lawyer, Admin), and deployed microservices on Railway.",
+    "role": "AI Developer: Built FastAPI LangChain RAG pipeline, integrated Gemini AI with Pinecone vector store and deployed microservices on Railway.",
     "challengesLearnings": "Eliminated hallucinations in statutory queries through strict top-k Pinecone grounding. Managed asynchronous PDF document parsing in FastAPI without bottlenecking the Express gateway.",
     "limitations": "Provides informative legal intelligence and risk assessment; does not replace formal legal representation by a licensed attorney.",
     "liveDemoUrl": "https://jury-ai-production.up.railway.app",
@@ -73,7 +90,10 @@
   {
     "id": "finpulse",
     "title": "FinPulse: AI Financial & Earnings Call Research Copilot",
-    "categoryTags": ["RAG", "ML"],
+    "categoryTags": [
+      "RAG",
+      "ML"
+    ],
     "summary": "Institutional-grade RAG copilot analyzing corporate earnings call transcripts and SEC filings with numerical grounding, verifiable citations, and cross-company guidance inconsistency detection.",
     "featured": true,
     "status": "Deployed on Streamlit Cloud",
@@ -81,7 +101,16 @@
     "problem": "Analyzing lengthy corporate earnings calls, SEC 10-K/10-Q filings, and financial metrics is slow and manual, while general LLMs hallucinate financial numbers and lack verifiable grounding.",
     "dataset": "Indexed earnings call transcripts and SEC reports across global enterprise technology leaders (NVIDIA, Apple, Microsoft, Alphabet/Google, Tesla) with dynamic PDF/TXT/MD ingestion.",
     "methodology": "Dual-stage RAG architecture combining ChromaDB vector similarity search, BGE cross-encoder reranking, and citation synthesis with strict zero-hallucination guardrails and confidence scoring via Groq LLM inference.",
-    "technologies": ["Python", "Streamlit", "ChromaDB", "Groq API", "BGE Cross-Encoder", "Sentence Transformers", "LangChain", "Vector Search"],
+    "technologies": [
+      "Python",
+      "Streamlit",
+      "ChromaDB",
+      "Groq API",
+      "BGE Cross-Encoder",
+      "Sentence Transformers",
+      "LangChain",
+      "Vector Search"
+    ],
     "keyResults": "Instant financial Q&A with document-level citations and verbatim snippets, colored confidence badges (High/Medium/Low), and automated peer comparison reasoning (e.g., NVIDIA vs Microsoft CapEx).",
     "role": "Sole AI Developer: Engineered retrieval and cross-encoder reranking pipeline, implemented citation synthesis and confidence scoring, built Streamlit workspace UI, and deployed to Streamlit Community Cloud.",
     "challengesLearnings": "Eliminated financial hallucination by enforcing strict numerical grounding and BGE reranking over high-density chunks before synthesizing answers with source citations.",
@@ -100,7 +129,9 @@
   {
     "id": "strengthcast",
     "title": "StrengthCast: Concrete Compressive Strength Predictor",
-    "categoryTags": ["ML"],
+    "categoryTags": [
+      "ML"
+    ],
     "summary": "Predicts concrete compressive strength from mix ratios and curing age using high-performance regression pipelines.",
     "featured": true,
     "status": "Deployed on Streamlit Cloud",
@@ -108,7 +139,16 @@
     "problem": "Predict concrete compressive strength based on constituent mix proportions and curing duration, replacing slow 28-day physical cylinder break tests.",
     "dataset": "Concrete Compressive Strength dataset (cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, fine aggregate, age in days).",
     "methodology": "Exploratory data analysis, scikit-learn ColumnTransformer preprocessing pipeline saved with joblib, and extensive regression model benchmarking.",
-    "technologies": ["Python", "scikit-learn", "XGBoost", "Random Forest", "Streamlit", "Joblib", "Pandas", "NumPy"],
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "Random Forest",
+      "Streamlit",
+      "Joblib",
+      "Pandas",
+      "NumPy"
+    ],
     "keyResults": "Compared Linear Regression (R² 0.63), Random Forest (R² 0.88), and XGBoost (R² 0.93, RMSE 4.28 MPa, MAE 2.96 MPa).",
     "role": "Sole ML Developer: Designed preprocessing pipeline, performed cross-validation & hyperparameter tuning, built and deployed interactive Streamlit web application.",
     "challengesLearnings": "Strength depends nonlinearly on curing age, which linear models miss completely. Successfully captured nonlinear interaction dynamics using tree ensemble pipelines.",
@@ -127,7 +167,9 @@
   {
     "id": "crop-recommendation",
     "title": "Crop Recommendation System",
-    "categoryTags": ["ML"],
+    "categoryTags": [
+      "ML"
+    ],
     "summary": "Recommends optimal crops across 22 categories using soil nutrients and meteorological parameters.",
     "featured": true,
     "status": "Deployed on Streamlit Cloud",
@@ -135,14 +177,22 @@
     "problem": "Guide farmers in selecting the most viable crop to maximize yield based on localized soil chemistry and atmospheric conditions.",
     "dataset": "22-class agricultural crop dataset containing N, P, K soil ratios, temperature, humidity, pH, and rainfall.",
     "methodology": "Multi-class classification pipeline comparing SVC, Logistic Regression, and Random Forest evaluated with GridSearchCV hyperparameter tuning, followed by confusion matrix error analysis.",
-    "technologies": ["Python", "scikit-learn", "Random Forest", "GridSearchCV", "Pandas", "NumPy", "Streamlit"],
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "Random Forest",
+      "GridSearchCV",
+      "Pandas",
+      "NumPy",
+      "Streamlit"
+    ],
     "keyResults": "Random Forest achieved the best performance with ~99% test accuracy across 22 crop classes.",
     "role": "Sole ML Developer: Implemented multiclass classification modeling, automated grid search validation, and built web deployment interface.",
     "challengesLearnings": "In-depth error analysis revealed confusion primarily between rice and jute due to overlapping high-humidity and water requirement profiles.",
     "limitations": "Does not account for dynamic real-time market pricing or seasonal pests.",
     "liveDemoUrl": "https://adityajare-crop-recommendation-main-fgpl11.streamlit.app/",
     "hasDemo": true,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/Crop-Recommendation",
     "additionalLinks": "https://adityajare-crop-recommendation-main-fgpl11.streamlit.app/",
     "gallery": [
       {
@@ -154,7 +204,9 @@
   {
     "id": "diabetes-risk-prediction",
     "title": "Diabetes Risk Prediction",
-    "categoryTags": ["ML"],
+    "categoryTags": [
+      "ML"
+    ],
     "summary": "Predicts diagnostic diabetes onset probability using clinical patient physiological metrics.",
     "featured": true,
     "status": "Deployed on Render",
@@ -162,14 +214,20 @@
     "problem": "Provide early predictive risk assessment for diabetes onset to assist clinical screening workflows.",
     "dataset": "Clinical diabetes diagnostic dataset with patient blood glucose, BMI, insulin, age, and blood pressure markers.",
     "methodology": "Data preprocessing, feature scaling, classification benchmarking, and interactive deployment.",
-    "technologies": ["Python", "scikit-learn", "Pandas", "NumPy", "Streamlit"],
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Streamlit"
+    ],
     "keyResults": "Trained classification algorithms with validated ROC-AUC metrics and real-time inference.",
     "role": "ML Developer: Developed preprocessing, feature normalization pipeline, and interactive screening app.",
     "challengesLearnings": "Handled zero-value imputations for biological variables such as insulin and skinfold thickness.",
     "limitations": "Intended for screening assistance; clinical validation required.",
     "liveDemoUrl": "https://diabetes-risk-checker-ibky.onrender.com/",
     "hasDemo": true,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/Diabetes-Risk-Checker",
     "additionalLinks": "https://diabetes-risk-checker-ibky.onrender.com/",
     "gallery": [
       {
@@ -181,21 +239,32 @@
   {
     "id": "bank-marketing-campaign",
     "title": "Bank Marketing Campaign Predictor",
-    "categoryTags": ["ML", "ANN"],
+    "categoryTags": [
+      "ML",
+      "ANN"
+    ],
     "summary": "Predicts customer term-deposit subscriptions on 41k records addressing high class imbalance and data leakage.",
     "featured": true,
     "status": "Notebook only",
     "problem": "Optimize telemarketing targeting efficiency by predicting customer willingness to subscribe to long-term bank deposits while preventing target data leakage.",
     "dataset": "Bank Marketing dataset containing 41,000+ campaign records with high class imbalance (11% positive subscribers).",
     "methodology": "Removed the leaky 'duration' feature to ensure real-world predictive validity, handled 'unknown' categorical values cleanly inside the pipeline, applied class weights to balance 11% minority positives, and benchmarked a Keras Tuner-optimized ANN against XGBoost.",
-    "technologies": ["Python", "TensorFlow/Keras", "Keras Tuner", "XGBoost", "scikit-learn", "Pandas", "NumPy"],
+    "technologies": [
+      "Python",
+      "TensorFlow/Keras",
+      "Keras Tuner",
+      "XGBoost",
+      "scikit-learn",
+      "Pandas",
+      "NumPy"
+    ],
     "keyResults": "Tuned ANN (ROC-AUC 0.799) vs XGBoost (ROC-AUC 0.811), both achieving ~65% recall on subscribers, delivering a 3.4x lift over random calling.",
     "role": "Sole ML/DL Researcher: Led exploratory data analysis, leakage auditing, pipeline design, hyperparameter search with Keras Tuner, and lift curve evaluation.",
     "challengesLearnings": "Identified that gradient boosting matched a tuned ANN with far less computational overhead and faster training iterations, highlighting the practical efficiency of tree ensembles for structured tabular data.",
     "limitations": "Phone campaign response dynamics can drift over varying macroeconomic interest rate cycles.",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/bank_marketing_ann_vs_xgboost.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
@@ -207,21 +276,31 @@
   {
     "id": "employee-attrition-prediction",
     "title": "Employee Attrition Prediction",
-    "categoryTags": ["ML", "ANN"],
+    "categoryTags": [
+      "ML",
+      "ANN"
+    ],
     "summary": "Identifies organizational turnover drivers and leaver probabilities under severe class imbalance.",
     "featured": false,
     "status": "Notebook only",
     "problem": "Predict employee flight risk to enable proactive retention interventions in human resources management.",
     "dataset": "HR Employee Attrition dataset characterized by 16% positive leavers (84% retention).",
     "methodology": "Cross-validated classification models addressing imbalance; tested Logistic Regression with balanced weighting against an unweighted ANN to study class penalty effects.",
-    "technologies": ["Python", "scikit-learn", "TensorFlow/Keras", "Pandas", "NumPy", "Matplotlib"],
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "TensorFlow/Keras",
+      "Pandas",
+      "NumPy",
+      "Matplotlib"
+    ],
     "keyResults": "Logistic Regression won on cross-validated ROC-AUC (0.83) with recall 0.66 on leavers; untuned-for-imbalance ANN scored recall 0.32. [Add final ANN result after class weights.]",
     "role": "Sole Developer & Analyst: Investigated class imbalance techniques, designed evaluation matrices, and analyzed metric divergence between weighted linear models and neural networks.",
     "challengesLearnings": "Unequivocally demonstrated that deep neural networks require explicit class weighting or focal loss on tabular imbalanced sets; otherwise, gradients get overwhelmed by majority classes.",
     "limitations": "HR perception factors such as team morale and peer management dynamics are unquantified in static tabular records.",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/HR_Employee_Attrition_ann_keras_tuned.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
@@ -233,21 +312,29 @@
   {
     "id": "california-housing-prediction",
     "title": "California Housing Price Prediction",
-    "categoryTags": ["ANN"],
+    "categoryTags": [
+      "ANN"
+    ],
     "summary": "Deep neural network regression for housing median values with strict data-leakage safeguards.",
     "featured": false,
     "status": "Notebook only",
     "problem": "Estimate median California district housing values from demographic and geographical attributes.",
     "dataset": "California Housing dataset comprising 20,640 census block records.",
     "methodology": "ANN regression architecture using He normal weight initialization, batch normalization/dropout, early stopping, and outlier removal performed strictly on training splits only.",
-    "technologies": ["Python", "TensorFlow/Keras", "scikit-learn", "Pandas", "NumPy"],
+    "technologies": [
+      "Python",
+      "TensorFlow/Keras",
+      "scikit-learn",
+      "Pandas",
+      "NumPy"
+    ],
     "keyResults": "Test R² of approximately 0.77 to 0.80 (RMSE ~0.51 to 0.55 in $100k units). [Add Linear/XGBoost baseline results if run.]",
     "role": "Sole DL Developer: Formulated regression architecture, engineered training/validation split protocols to prevent leakage, and resolved convergence anomalies.",
     "challengesLearnings": "Diagnosed and resolved a subtle training bug where features and targets were misaligned; detected it because loss plateaued suspiciously at the exact variance of the target variable.",
     "limitations": "Historical pricing census data does not reflect contemporary inflation and current real estate valuation shifts.",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/california_housing_ann.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
@@ -259,21 +346,30 @@
   {
     "id": "stellar-object-classification",
     "title": "Stellar Object Classification",
-    "categoryTags": ["ANN"],
+    "categoryTags": [
+      "ANN"
+    ],
     "summary": "Classifies SDSS astronomical objects into galaxies, quasars, and stars with spectral band ablation.",
     "featured": false,
     "status": "Notebook only",
     "problem": "Automate spectroscopic astronomical taxonomy for massive sky survey datasets from the Sloan Digital Sky Survey (SDSS).",
     "dataset": "25k SDSS spectral and photometric observation records across 3 classes: Galaxy, Quasar, and Star.",
     "methodology": "Trained and benchmarked ANN architectures and XGBoost under two experimental regimes: full spectrum with redshift versus photometric color bands only.",
-    "technologies": ["Python", "TensorFlow/Keras", "XGBoost", "scikit-learn", "Pandas", "NumPy"],
+    "technologies": [
+      "Python",
+      "TensorFlow/Keras",
+      "XGBoost",
+      "scikit-learn",
+      "Pandas",
+      "NumPy"
+    ],
     "keyResults": "With redshift: ANN achieved ~97% and XGBoost ~98% accuracy. Without redshift (photometric bands only): XGBoost 86% and ANN 75%, with stars being hardest to identify.",
     "role": "Sole ML/DL Researcher: Devised feature ablation experiments, trained classification models, and interpreted feature importance.",
     "challengesLearnings": "Discovered that a single feature (redshift) carried the vast majority of predictive discrimination; ablation proved the critical reliance models develop on dominant physical markers.",
     "limitations": "High sensitivity to redshift accuracy; photometric-only estimation struggles when spectral resolution is degraded.",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/star_classification.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
@@ -285,21 +381,30 @@
   {
     "id": "vehicle-type-classification",
     "title": "Vehicle Type Classification",
-    "categoryTags": ["CNN"],
+    "categoryTags": [
+      "CNN"
+    ],
     "summary": "Transfer learning computer vision model classifying 10 vehicle categories using MobileNetV2.",
     "featured": true,
     "status": "Notebook only",
     "problem": "Classify complex multi-class road transport vehicles across 10 diverse categories in real-world driving environments.",
     "dataset": "Multi-class vehicle imagery covering 10 distinct classes: bus, bike, CNG, easy-bike, hatchback, MPV, pickup, SUV, sedan, truck.",
     "methodology": "Transfer learning architecture utilizing MobileNetV2 backbone, in-model data augmentation layers (RandomFlip, RandomRotation, RandomZoom), followed by two-stage fine-tuning.",
-    "technologies": ["Python", "TensorFlow/Keras", "MobileNetV2", "Computer Vision", "Data Augmentation", "NumPy"],
+    "technologies": [
+      "Python",
+      "TensorFlow/Keras",
+      "MobileNetV2",
+      "Computer Vision",
+      "Data Augmentation",
+      "NumPy"
+    ],
     "keyResults": "Validation accuracy reached 85.9%; evaluated on a separate 100-image out-of-distribution test set yielding 71% accuracy. Weakest classes: pickup (confused with truck) and hatchback/sedan.",
     "role": "Computer Vision Developer: Architected transfer learning pipeline, built data pipelines with tf.data, implemented data augmentation, and debugged evaluation metrics.",
     "challengesLearnings": "Uncovered a label-order mismatch between folder directory alphanumeric sorting and training label indexing that caused the initial test score to show 42%; rectified the class mapping pipeline to unlock the true 71% generalization score.",
     "limitations": "Suffers from visual confusion in ambiguous angles between geometrically similar body shapes (pickup vs truck, sedan vs hatchback).",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/vehical_classification_CNN.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
@@ -311,21 +416,30 @@
   {
     "id": "age-gender-estimation",
     "title": "Age and Gender Estimation from Faces",
-    "categoryTags": ["CNN"],
+    "categoryTags": [
+      "CNN"
+    ],
     "summary": "Multi-output CNN utilizing VGG16 with functional API for simultaneous age regression and gender classification.",
     "featured": true,
     "status": "Notebook only",
     "problem": "Simultaneously estimate human age (continuous regression) and binary gender (classification) from facial crops within a unified deep network.",
     "dataset": "UTKFace dataset containing 20k+ face images. Identified and excised ~43k duplicate files across redundant directory uploads prior to dataset splitting.",
     "methodology": "Multi-task learning architecture with shared VGG16 convolutional feature extractor branching into dual heads via Keras Functional API: linear activation for age regression (MSE/MAE loss) and sigmoid activation for gender (Binary Cross-Entropy).",
-    "technologies": ["Python", "TensorFlow/Keras", "VGG16", "Functional API", "OpenCV", "Multi-task Learning"],
+    "technologies": [
+      "Python",
+      "TensorFlow/Keras",
+      "VGG16",
+      "Functional API",
+      "OpenCV",
+      "Multi-task Learning"
+    ],
     "keyResults": "[Add test age MAE (baseline about 15 years for predicting the mean), gender accuracy, MAE by age group].",
     "role": "Computer Vision Researcher: Conducted dataset deduplication, implemented dual-output Keras functional graph, weighted multi-task loss functions, and conducted error audits.",
     "challengesLearnings": "Detected and removed ~43,000 duplicate images across multi-folder archives before training to prevent severe data leakage between train/val/test splits.",
     "limitations": "Dataset contains sparse representations for subjects aged >70, lacks longitudinal person IDs, and carries known demographic and illumination biases. Not deployed yet.",
     "liveDemoUrl": null,
     "hasDemo": false,
-    "githubUrl": "[Add URL]",
+    "githubUrl": "https://github.com/AdityaJare/ML-PRojects/blob/main/age_gender_estimation_vgg16.ipynb",
     "additionalLinks": "[Add optional YouTube/blog/report link]",
     "gallery": [
       {
