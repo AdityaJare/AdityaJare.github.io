@@ -1,7 +1,7 @@
 /**
  * Aditya Jare Portfolio - Contact Form Engine (contact.js)
- * Static-friendly backend integration (Formspree) with strict client-side validation,
- * no fake submits, and copy-to-clipboard utilities.
+ * Direct mailto integration with strict client-side validation
+ * and copy-to-clipboard utilities.
  */
 
 (function () {
@@ -80,62 +80,21 @@
 
       if (!isValid) return;
 
-      const endpoint = form.getAttribute('action');
+      const recipient = 'adityajare2004@gmail.com';
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const subject = encodeURIComponent(`[Portfolio Contact] ${subjectInput.value.trim()}`);
+      const body = encodeURIComponent(
+        `Hi Aditya,\n\n${messageInput.value.trim()}\n\nFrom: ${name}\nEmail: ${email}`
+      );
 
-      // Check if endpoint is still unconfigured placeholder
-      if (!endpoint || endpoint.includes('[Add your Formspree ID]')) {
-        feedbackBanner.className = 'form-feedback-banner error';
-        feedbackBanner.innerHTML = `
-          <strong>Endpoint Setup Required:</strong> To enable direct static form processing, create a free form endpoint at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">formspree.io</a> and replace <code>[Add your Formspree ID]</code> in <code>data/profile.json</code>. In the meantime, please contact Aditya directly using the direct Gmail or WhatsApp links on this page.
-        `;
-        feedbackBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
-
-      // Live submission to configured Formspree backend
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `
-        <svg class="spin-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
-        Sending message...
+      feedbackBanner.className = 'form-feedback-banner success';
+      feedbackBanner.innerHTML = `
+        <strong>Composing message...</strong> Opening your default mail client. If it does not launch automatically, <a href="mailto:${recipient}?subject=${subject}&body=${body}" style="text-decoration: underline; font-weight: 600;">click here to email ${recipient}</a>.
       `;
+      feedbackBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-      try {
-        const formData = {
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          subject: subjectInput.value.trim(),
-          message: messageInput.value.trim()
-        };
-
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
-          form.reset();
-          feedbackBanner.className = 'form-feedback-banner success';
-          feedbackBanner.innerHTML = `
-            <strong>Thank you!</strong> Your message has been sent successfully. Aditya will get back to you promptly.
-          `;
-        } else {
-          const errData = await response.json();
-          feedbackBanner.className = 'form-feedback-banner error';
-          feedbackBanner.textContent = errData.error || 'Oops! There was a problem submitting your message. Please try again or email directly.';
-        }
-      } catch (err) {
-        feedbackBanner.className = 'form-feedback-banner error';
-        feedbackBanner.textContent = 'Network error occurred while sending your message. Please reach out directly via Gmail or LinkedIn.';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-        feedbackBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
     });
   }
 

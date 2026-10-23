@@ -8,7 +8,7 @@
   "avatarAlt": "Profile photo of Er. Aditya Jare",
   "resumeUrl": "[Add resume PDF]",
   "status": "B.E. in AIML | Computer Vision Enthusiast",
-  "location": "[Add your location, e.g. Pune / Mumbai, India]",
+  "location": "Pune, Maharashtra, India",
   "socials": {
     "github": "https://github.com/AdityaJare",
     "linkedin": "https://www.linkedin.com/in/aditya-jare-73b071218/",
@@ -16,7 +16,6 @@
     "whatsapp": "https://wa.me/919579635665",
     "email": "adityajare2004@gmail.com"
   },
-  "contactFormEndpoint": "https://formspree.io/f/[Add your Formspree ID]",
   "japanese": {
     "currentLevel": "JLPT N3 Aspirant",
     "targetExam": "JLPT N3 December Exam",

@@ -146,21 +146,38 @@
               <span class="badge badge-tag">Follow &rarr;</span>
             </a>
 
+            <!-- Location -->
+            <div class="contact-channel-item" style="cursor: default;">
+              <div class="contact-channel-left">
+                <div class="contact-channel-icon" style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-channel-name">Location</div>
+                  <div class="contact-channel-detail">Pune, Maharashtra, India</div>
+                </div>
+              </div>
+              <span class="badge badge-tag">Based in</span>
+            </div>
+
             <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;">
               <em>Note: You can also access these profiles via the persistent footer icon buttons across every page on this website.</em>
             </p>
           </div>
 
-          <!-- Right Column: Static-Friendly Formspree Form -->
+          <!-- Right Column: Direct Message Form -->
           <div class="form-card">
             <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send a Direct Message</h2>
             <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-              Fill in your details below. Validated on the client-side and routed securely to Formspree backend.
+              Fill in your details below to compose and send an email directly to Aditya.
             </p>
 
             <div id="form-feedback-banner" class="form-feedback-banner" role="alert" aria-live="polite"></div>
 
-            <form id="contact-form" action="https://formspree.io/f/[Add your Formspree ID]" method="POST" novalidate>
+            <form id="contact-form" novalidate>
               <div class="form-group">
                 <label for="name" class="form-label">Full Name <span style="color: var(--accent-rose);">*</span></label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required autocomplete="name" />

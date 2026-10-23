@@ -17,7 +17,7 @@ Deployed directly on **GitHub Pages** (free, zero-build, ultra-fast static HTML5
   - Daily seeded **Word of the Day** with Japanese audio pronunciation (Web Speech API).
   - 3D interactive **vocabulary flashcards** with flip triggers (mouse click or keyboard `Enter`).
   - Comprehensive 9-dimension competency progress matrix.
-- **Static-Friendly Contact Form**: Ready for [Formspree](https://formspree.io) with strict client-side validation (no fake submits) and direct social/email links.
+- **Direct Contact Form**: Client-side validated direct mailto message composer and direct links (Gmail, WhatsApp, LinkedIn, GitHub).
 - **Accessibility & Performance**: Keyboard `:focus-visible` styling, ARIA roles, `prefers-reduced-motion` compliance, semantic HTML5, and custom SVG favicon.
 
 ---
@@ -31,7 +31,7 @@ AJportfolio/
 ├── projects.html              # All 9 Case Studies with Category Filters & Modal Dialogs
 ├── certificates.html          # Verified Credentials with Category Filters (AI/ML, DL, Cloud, etc.)
 ├── japanese.html              # JLPT N3 Journey, Word of the Day, 3D Flashcards, Study Resources
-├── contact.html               # Formspree Contact Form, Direct Links (Gmail, WhatsApp, LinkedIn, GitHub)
+├── contact.html               # Direct Contact Form, Direct Channels (Gmail, WhatsApp, LinkedIn, GitHub, Location)
 ├── 404.html                   # Clean fallback error page for GitHub Pages
 ├── .nojekyll                  # GitHub Pages flag to disable Jekyll
 ├── css/
@@ -41,9 +41,9 @@ AJportfolio/
 │   ├── projects.js            # Projects engine, Category filters, Coming soon state, Modal dialogs
 │   ├── certificates.js        # Certificates engine & Category filters
 │   ├── japanese.js            # JLPT N3 tracker, Word of the Day audio, 3D Flashcard flip
-│   └── contact.js             # Form validation, Formspree submission, Clipboard helpers
+│   └── contact.js             # Form validation, Direct message mailto composer, Clipboard helpers
 ├── data/
-│   ├── profile.json           # Profile metadata, social links, and contact endpoint
+│   ├── profile.json           # Profile metadata and social links
 │   ├── projects.json          # All 9 projects + schema for new additions
 │   ├── certificates.json      # Certificate credentials schema & placeholders
 │   └── japanese.json          # JLPT N3 skills, vocabulary list, and study resources
@@ -65,7 +65,6 @@ AJportfolio/
 Open `data/profile.json` and update the placeholders:
 - `"resumeUrl"`: Put the path or link to your resume PDF (e.g. `assets/Aditya_Jare_Resume.pdf`).
 - `"socials"`: Replace `[Add your LinkedIn URL]`, `[Add your Gmail address]`, etc.
-- `"contactFormEndpoint"`: Create a free form at [formspree.io](https://formspree.io) and paste your form ID (e.g. `https://formspree.io/f/xyzabced`).
 
 ### 2. Adding a New Project
 Open `data/projects.json` and append a new JSON object:
