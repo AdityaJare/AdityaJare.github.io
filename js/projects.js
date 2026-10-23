@@ -614,10 +614,16 @@
       extraLinkBtn = `<a href="${escapeHtml(project.additionalLinks)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Project Report</a>`;
     }
 
+    let publicationBtn = '';
+    if (project.publicationUrl) {
+      publicationBtn = `<a href="${escapeHtml(project.publicationUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: var(--accent-amber); color: var(--accent-amber); display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Research Paper</a>`;
+    }
+
     footerContainer.innerHTML = `
       <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
         ${demoBtn}
         ${githubBtn}
+        ${publicationBtn}
         ${extraLinkBtn}
       </div>
       <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('modal-close-btn').click()">Close</button>
