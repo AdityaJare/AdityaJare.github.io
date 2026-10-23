@@ -1,6 +1,6 @@
 # Er. Aditya Jare - Personal AI/ML Portfolio
 
-A modern, responsive, mobile-first personal portfolio website for **Er. Aditya Jare**, an AI/ML developer focused on pursuing a Master's in Computer Vision and achieving JLPT N3 Japanese proficiency.
+A modern, responsive, mobile-first personal portfolio website for **Er. Aditya Jare**, a B.E. graduate in AIML actively learning ML, ANN, CNN, RNN, GenAI, and RAG with a deep passion for Computer Vision tasks, and on a Japanese language journey targeting JLPT N3 proficiency.
 
 Deployed directly on **GitHub Pages** (free, zero-build, ultra-fast static HTML5/CSS3/ES6).
 
@@ -27,7 +27,7 @@ Deployed directly on **GitHub Pages** (free, zero-build, ultra-fast static HTML5
 ```text
 AJportfolio/
 ├── index.html                 # Hero, About Preview, Featured Projects (6), Skills Overview, Highlights
-├── about.html                 # Bio, Master's roadmap, Education, Experience, Technical & Soft Skills
+├── about.html                 # Bio, Computer Vision roadmap, Education, Experience, Technical & Soft Skills
 ├── projects.html              # All 9 Case Studies with Category Filters & Modal Dialogs
 ├── certificates.html          # Verified Credentials with Category Filters (AI/ML, DL, Cloud, etc.)
 ├── japanese.html              # JLPT N3 Journey, Word of the Day, 3D Flashcards, Study Resources

@@ -2,12 +2,12 @@
   "name": "Er. Aditya Jare",
   "shortName": "Aditya Jare",
   "title": "AI/ML Developer & Data Science Enthusiast",
-  "tagline": "Building & deploying machine learning, ANN, and CNN solutions with a core focus on advancing to a Master's in Computer Vision.",
-  "heroBio": "I build and deploy end-to-end Machine Learning, ANN, and CNN projects, focusing on scalable pipelines and real-world impact. Currently advancing my expertise in deep learning architectures and computer vision while pursuing JLPT N3 Japanese proficiency.",
+  "tagline": "B.E. graduate in AIML, building & deploying ML, ANN, CNN, RNN, GenAI, and RAG solutions with a core passion for Computer Vision tasks.",
+  "heroBio": "I build and deploy end-to-end Machine Learning, ANN, CNN, RNN, GenAI, and RAG projects, focusing on scalable pipelines and real-world impact. B.E. graduate in AIML with a deep specialization in Computer Vision, currently on my Japanese language journey (JLPT N3).",
   "avatar": "assets/images/aditya-profile.png",
   "avatarAlt": "Profile photo of Er. Aditya Jare",
   "resumeUrl": "[Add resume PDF]",
-  "status": "Aspiring Master's Candidate in Computer Vision",
+  "status": "B.E. in AIML | Computer Vision Enthusiast",
   "location": "[Add your location, e.g. Pune / Mumbai, India]",
   "socials": {
     "github": "https://github.com/AdityaJare",
@@ -20,6 +20,6 @@
   "japanese": {
     "currentLevel": "JLPT N3 Aspirant",
     "targetExam": "JLPT N3 December Exam",
-    "goal": "Master's in Computer Vision & Bilingual Technical Fluency"
+    "goal": "Computer Vision Specialization & Bilingual Technical Fluency"
   }
 }

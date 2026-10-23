@@ -2,7 +2,7 @@
   "profile": {
     "currentLevel": "JLPT N3 Aspirant",
     "targetExamDate": "December",
-    "whyLearning": "[Add your reason, e.g. Fascination with Japanese innovation, precision engineering, and aspiration to pursue a Master's degree in Computer Vision in Japan while conducting bilingual AI research.]",
+    "whyLearning": "Fascination with Japanese innovation, precision engineering, and a desire to collaborate with Japan's cutting-edge AI and Computer Vision ecosystems as a B.E. graduate in AIML.",
     "goals": [
       "Pass JLPT N3 in December exam",
       "Achieve technical reading proficiency in Japanese computer vision & AI research papers",
@@ -207,7 +207,7 @@
       "partOfSpeech": "Noun",
       "example": "私の目標はコンピュータビジョンの修士号を取得することです。",
       "exampleReading": "わたし の もくひょう は こんぴゅーた びじょん の しゅうしごう を しゅとく する こと です。",
-      "exampleEnglish": "My goal is to obtain a Master's degree in Computer Vision.",
+      "exampleEnglish": "My goal is to specialize in Computer Vision.",
       "category": "Goals"
     },
     {
