@@ -27,7 +27,7 @@ Deployed directly on **GitHub Pages** (free, zero-build, ultra-fast static HTML5
 ```text
 AJportfolio/
 ├── index.html                 # Hero, About Preview, Featured Projects (6), Skills Overview, Highlights
-├── about.html                 # Bio, Computer Vision roadmap, Education, Experience, Technical & Soft Skills
+├── about.html                 # Bio, Computer Vision roadmap, Education, Technical & Soft Skills
 ├── projects.html              # All 9 Case Studies with Category Filters & Modal Dialogs
 ├── certificates.html          # Verified Credentials with Category Filters (AI/ML, DL, Cloud, etc.)
 ├── japanese.html              # JLPT N3 Journey, Word of the Day, 3D Flashcards, Study Resources
