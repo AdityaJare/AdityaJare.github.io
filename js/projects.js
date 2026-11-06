@@ -264,28 +264,6 @@
   // RENDER FILTERED PROJECTS
   // =========================================================================
   function renderFilteredProjects(container, filter) {
-    // Handle RNN Coming Soon
-    if (filter === 'RNN') {
-      container.innerHTML = `
-        <div class="empty-state-card">
-          <div class="empty-state-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-            </svg>
-          </div>
-          <span class="badge badge-progress" style="margin-bottom: 0.75rem;">Under Active Development</span>
-          <h3 style="margin-bottom: 0.5rem;">RNN Project Coming Soon</h3>
-          <p style="max-width: 480px; margin: 0 auto 1.5rem; font-size: 0.92rem; color: var(--text-secondary);">
-            Aditya is currently researching and implementing novel architectures in Recurrent Neural Networks / sequential vision models. Check back soon or visit GitHub for work in progress.
-          </p>
-          <a href="https://github.com/AdityaJare" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-            Check GitHub Commits
-          </a>
-        </div>
-      `;
-      return;
-    }
-
     let filtered = allProjects;
     if (filter !== 'All') {
       filtered = allProjects.filter((p) => {
@@ -609,8 +587,18 @@
       githubBtn = `<span class="badge badge-tag">[GitHub: Add URL]</span>`;
     }
 
+    let huggingFaceBtn = '';
+    if (project.huggingFaceUrl) {
+      huggingFaceBtn = `<a href="${escapeHtml(project.huggingFaceUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.35rem;">🤗 Hugging Face</a>`;
+    }
+
+    let kaggleBtn = '';
+    if (project.kaggleUrl) {
+      kaggleBtn = `<a href="${escapeHtml(project.kaggleUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.35rem;">📓 Kaggle Notebook</a>`;
+    }
+
     let extraLinkBtn = '';
-    if (project.additionalLinks && project.additionalLinks !== '[Add optional YouTube/blog/report link]') {
+    if (project.additionalLinks && project.additionalLinks !== '[Add optional YouTube/blog/report link]' && project.additionalLinks !== project.liveDemoUrl && project.additionalLinks !== project.huggingFaceUrl) {
       extraLinkBtn = `<a href="${escapeHtml(project.additionalLinks)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Project Report</a>`;
     }
 
@@ -623,6 +611,8 @@
       <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
         ${demoBtn}
         ${githubBtn}
+        ${huggingFaceBtn}
+        ${kaggleBtn}
         ${publicationBtn}
         ${extraLinkBtn}
       </div>

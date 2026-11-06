@@ -128,6 +128,48 @@
     ]
   },
   {
+    "id": "intent-detection-distilbert",
+    "title": "Intent Detection with DistilBERT",
+    "categoryTags": [
+      "NLP",
+      "ML"
+    ],
+    "summary": "An end-to-end Natural Language Understanding (NLU) solution powered by a fine-tuned DistilBERT transformer model. Classifies typed queries into 7 action categories with low latency and real-time Streamlit probability breakdown.",
+    "featured": true,
+    "status": "Deployed on Streamlit Cloud",
+    "image": "assets/images/intent-detection.png",
+    "problem": "Accurately identifying user action intent from conversational queries is essential for personal assistants and chatbots, but full-sized transformer models like BERT often introduce prohibitive latency and computational overhead.",
+    "dataset": "Benchmark NLU intent detection dataset covering 7 action intents: AddToPlaylist, BookRestaurant, GetWeather, PlayMusic, RateBook, SearchCreativeWork, and SearchScreeningEvent.",
+    "methodology": "Fine-tuned distilbert-base-uncased with PyTorch and Hugging Face Transformers on GPU. Retains 97% of BERT's performance while being 40% smaller and 60% faster. Built and deployed an interactive Streamlit web application providing real-time intent prediction and softmax probability breakdown across all 7 classes.",
+    "technologies": [
+      "DistilBERT",
+      "Hugging Face Transformers",
+      "PyTorch",
+      "Streamlit",
+      "Python",
+      "Hugging Face Hub",
+      "Kaggle GPU",
+      "NLU / NLP",
+      "uv"
+    ],
+    "keyResults": "High-confidence predictions (e.g. 99.6% on restaurant bookings), 60% faster inference latency over base BERT, full 7-class softmax probability distribution, and published model checkpoint on Hugging Face Hub.",
+    "role": "Sole AI/NLP Developer: Fine-tuned DistilBERT on Kaggle GPU with AdamW, pushed weights and tokenizer to Hugging Face Hub, built Streamlit interactive inference app, and deployed to Streamlit Community Cloud.",
+    "challengesLearnings": "Ensured seamless tokenization by omitting redundant token_type_ids for DistilBERT, managed 64-token sequence truncation/padding, and cached model inference in Streamlit for near-instant responses.",
+    "limitations": "Trained specifically for the 7 designated intent classes; ambiguous or out-of-domain conversational queries benefit from confidence thresholding or future multi-intent extensions.",
+    "liveDemoUrl": "https://intent-detection-llm-aj.streamlit.app/",
+    "hasDemo": true,
+    "githubUrl": "https://github.com/AdityaJare/Intent-Detection-llm-",
+    "huggingFaceUrl": "https://huggingface.co/adityajare/intent-detection-distilbert",
+    "kaggleUrl": "https://www.kaggle.com/code/adityajare/intent-detection-distilbert",
+    "additionalLinks": "https://huggingface.co/adityajare/intent-detection-distilbert",
+    "gallery": [
+      {
+        "caption": "Intent Detection with DistilBERT - Live Streamlit UI & Detailed Probability Distribution",
+        "image": "assets/images/intent-detection.png"
+      }
+    ]
+  },
+  {
     "id": "strengthcast",
     "title": "StrengthCast: Concrete Compressive Strength Predictor",
     "categoryTags": [

@@ -28,7 +28,7 @@ Deployed directly on **GitHub Pages** (free, zero-build, ultra-fast static HTML5
 AJportfolio/
 ├── index.html                 # Hero, About Preview, Featured Projects (6), Skills Overview, Highlights
 ├── about.html                 # Bio, Computer Vision roadmap, Education, Technical & Soft Skills
-├── projects.html              # All 9 Case Studies with Category Filters & Modal Dialogs
+├── projects.html              # All 12 Case Studies with Category Filters & Modal Dialogs
 ├── certificates.html          # Verified Credentials with Category Filters (AI/ML, DL, Cloud, etc.)
 ├── japanese.html              # JLPT N3 Journey, Word of the Day, 3D Flashcards, Study Resources
 ├── contact.html               # Direct Contact Form, Direct Channels (Gmail, WhatsApp, LinkedIn, GitHub, Location)
@@ -44,7 +44,7 @@ AJportfolio/
 │   └── contact.js             # Form validation, Direct message mailto composer, Clipboard helpers
 ├── data/
 │   ├── profile.json           # Profile metadata and social links
-│   ├── projects.json          # All 9 projects + schema for new additions
+│   ├── projects.json          # All 12 projects + schema for new additions
 │   ├── certificates.json      # Certificate credentials schema & placeholders
 │   └── japanese.json          # JLPT N3 skills, vocabulary list, and study resources
 └── assets/
